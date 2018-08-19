@@ -47,6 +47,10 @@ en:
       setting: "Settings"
       users: "Users"
       account: "Account"
+      manager: "Manager"
+      manage_user: "Manage Users"
+      manage_category: "Manage Categories"
+      manage_authors: "Manage Author"
     slogan:
       slogan: "Welcome to Book FRAMGIA"
     content:
@@ -92,6 +96,14 @@ en:
       email: "education@framgia.com"
       phone: "84-4-3795-5417"
       social: "Social"
+    admin:
+      navigation: "Navigation"
+      back_home: "Back home"
+      manage_users: "Manage Users"
+      manage_authors: "Manage Authors"
+      manage_categories: "Manage Categories"
+      manage_books: "Manage Books"
+      manage_feedbacks: "Manage Feedbacks"
 
   shared:
     error_messages:
@@ -177,3 +189,120 @@ en:
       can't_empty: "can't be empty"
       password_reset_expired: "Password reset has expired."
       account_not_activated: "Account not activated"
+  admin:
+    admin:
+      index:
+        welcome: "Welcome to Manager page!"
+        not_admin: "The page you were looking for doesn't exist (404)"
+    authors:
+      index:
+        manageauthor: "Manage Authors"
+        new_author: "New author:"
+        enter_name: "Enter new author..."
+        add: "ADD"
+        not_admin: "The page you were looking for doesn't exist (404)"
+      author:
+        delete: "Delete"
+        edit: "Edit"
+        you_sure: "You definitely want to delete!!!"
+      new_author:
+        new_author: "New author:"
+        enter_name: "Enter new author......"
+        add: "ADD"
+      edit:
+        edit: "Edit author"
+        edit_name: "Edit name author:"
+        save: "Save changes"
+      destroy:
+        deleted: "Author deleted"
+        delete_fail: "Delele False"
+      update:
+        updated: "Author updated"
+      create:
+        created: "Author created"
+      load_author:
+        no_author: "No author"
+    categories:
+      index:
+        manage_category: "Manage Categories"
+        not_admin: "The page you were looking for doesn't exist (404)"
+      category:
+        delete: "Delete"
+        edit: "Edit"
+        you_sure: "You definitely want to delete!!!"
+      new_category:
+        new_category: "New category:"
+        enter_name: "Enter new category..."
+        add: "ADD"
+      edit:
+        edit: "Edit category"
+        edit_name: "Edit name category:"
+        save: "Save changes"
+      update:
+        updated: "Category updated"
+      destroy:
+        deleted: "Category deleted"
+      create:
+        created: "Category created"
+      load_category:
+        no_category: "No category"
+    users:
+      index:
+        manage_users: "Manage Users"
+        not_admin: "The page you were looking for doesn't exist (404)"
+      user:
+        delete: "Delete"
+        you_sure: "You definitely want to delete!!!"
+      destroy:
+        deleted: "User deleted"
+      load_user:
+        no_user: "No user"
+    books:
+      index:
+        manage_book: "Manage books"
+        add_book: "Add new book"
+        new_book: "New book"
+        no_book: "No book"
+      book:
+        Image: "Image"
+        Title: "Title"
+        Pages: "Pages"
+        Rate: "Rate"
+        Description: "Description"
+        Author: "Author"
+        Category: "Category"
+        delete: "delete"
+        edit: "edit"
+        you_sure: "You definitely want to delete!!!"
+      new_book:
+        new_book: "Title:"
+        enter_name: "Enter here..."
+        num_page: "Num pages:"
+        description: "Description:"
+        author: "Author:"
+        category: "Category:"
+        picture: "Picture:"
+        add: "ADD"
+      destroy:
+        no_book: "Not found book"
+        book_deleted: "Book deleted"
+        book_no_deleted: "Book no delete"
+      create:
+        book_created: "Book created"
+        book_no_created: "Book no create"
+      edit:
+        edit: "Edit book"
+        new_book: "Title:"
+        enter_name: "Enter here..."
+        num_page: "Num pages:"
+        description: "Description:"
+        author: "Author:"
+        category: "Category:"
+        picture: "Picture:"
+        save: "Save changes"
+      update:
+        book_updated: "Book updated"
+      list_book:
+        delete: "Delete"
+        edit: "Edit"
+        you_sure: "You definitely want to delete!!!"

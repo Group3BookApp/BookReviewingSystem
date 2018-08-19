@@ -10,6 +10,9 @@ class User < ApplicationRecord
   has_secure_password
   scope :selected, -> {select :id, :name, :email}
   scope :ordered, -> {order created_at: :DESC}
+  has_many :books
+  has_many :book_marks
+  has_many :reviews
 
   class << self
     def digest string

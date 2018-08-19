@@ -1,0 +1,21 @@
+<%= form_for :book do |f| %>
+  <div class="field">
+    <%= f.label :title, t(".new_book") %>
+    <%= f.text_field :title, class: "form-control",
+      placeholder: t(".enter_name") %>
+    <%= f.label :num_page, t(".num_page") %>
+    <%= f.text_field :num_page, class: "form-control",
+      placeholder: t(".enter_name") %>
+    <%= f.label :description, t(".description") %>
+    <%= f.text_area :description, placeholder: t(".enter_name") %>
+    <%= f.label :author_id, t(".author") %>
+    <%= f.collection_select :author_id, @author_name, :id, :name,
+      include_blank: false %>
+    <%= f.label :category_id, t(".category") %>
+    <%= f.collection_select :category_id, @category_name, :id, :name,
+      include_blank: false %>
+    <%= f.label :picture, t(".picture") %>
+    <%= f.file_field :picture %>
+  </div>
+  <%= f.submit t(".add"), class: "btn btn-primary" %>
+<% end %>

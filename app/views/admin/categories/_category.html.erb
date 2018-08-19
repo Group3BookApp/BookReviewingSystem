@@ -1,0 +1,17 @@
+<% @category.each do |category| %>
+  <table class="table table-condensed">
+    <tbody>
+      <tr>
+        <td class="col-md-6"><%= category.name %></td>
+        <td class="col-md-1">
+          <%= link_to t(".delete"), admin_category_path(category), method: :delete,
+            class: "btn btn-danger", data: {confirm: t(".you_sure")} %>
+        </td>
+        <td>
+          <%= link_to t(".edit"), edit_admin_category_path(category),
+            class: "btn btn-primary" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>

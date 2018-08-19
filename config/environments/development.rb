@@ -35,13 +35,13 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = {host: "localhost:3000"}
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
+    address: "smtp.gmail.com",
     port: 587,
-    domain: "example.com",
-    user_name: Figaro.env.user_name,
-    password: Figaro.env.password,
-    authentication: 'plain',
-    enable_starttls_auto: true
+    domain: "gmail.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "congmu.cyn@gmail.com",
+    password: "ntcong0167"
   }
 
   config.action_mailer.perform_caching = false

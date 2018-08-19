@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1><%= t ".manage_book" %></h1>
+    <%= paginate @books, theme: "twitter-bootstrap-3" %>
+    <%= render "book" %>
+    <%= paginate @books, theme: "twitter-bootstrap-3" %>
+    <h2><%= t ".new_book" %></h2>
+    <%= render "new_book" %>
+  </div>
+</div>

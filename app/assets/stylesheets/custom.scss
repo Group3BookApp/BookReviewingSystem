@@ -375,3 +375,17 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+#table-book td{
+  text-align: center;
+  vertical-align: middle;
+}
+#table-book-th td{
+  color: $color_c2;
+  background-color: $color_table_th;
+  text-align: center;
+  vertical-align: middle;
+}
+#color_body{
+  background-color: $color_body
+}
