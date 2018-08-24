@@ -4,6 +4,7 @@ class User < ApplicationRecord
   before_create :create_activation_digest
   has_many :feedbacks, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :comments, dependent: :destroy
   validates :name, presence: true, length: {maximum: Settings.length_name}
   VALID_EMAIL_REGEX = Settings.email_regex
   validates :email, presence: true, length: {maximum: Settings.length_email}, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}

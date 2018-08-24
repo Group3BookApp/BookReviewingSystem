@@ -28,25 +28,17 @@ en:
     slogan:
       slogan: "Welcome to our book library"
     admin:
-      navigation: "Navigation"
-      back_home: "Back home"
-      manage_users: "Manage Users"
-      manage_authors: "Manage Authors"
-      manage_categories: "Manage Categories"
-      manage_books: "Manage Books"
-      manage_feedbacks: "Manage Feedbacks"
-      base_title: "Book Review"
-  static_pages:
-    home:
-      home: "Home"
-      title: "Books"
-    help:
-      help: "Help"
-      title: "Help User"
-    about:
-      about: "About"
-    contact:
-      contact: "Contact"
+      admin:
+        base_title: "Book Reviews"
+        navigation: "Navigation"
+        back_home: "Back home"
+        manage_users: "Manage Users"
+        manage_authors: "Manage Authors"
+        manage_categories: "Manage Categories"
+        manage_books: "Manage Books"
+        manage_feedbacks: "Manage Feedbacks"
+        manage_reviews: "Manage Reviews"
+        manage_comments: "Manage Comments"
   shared:
     error_messages:
       form_contain: "The form contains "
@@ -120,7 +112,6 @@ en:
   mailers:
     user_mailer:
       account_activation: "Account activation"
-  account_activations:
     edit:
       not_found: "Not found"
       account_activated: "Account activated!"
@@ -224,6 +215,16 @@ en:
         Description: "Description"
         Author: "Author"
         Category: "Category"
+        delete: "delete"
+        edit: "edit"
+        you_sure: "You definitely want to delete!!!"
+        rating: "Rating"
+        read: "Read"
+        waiting: "Waiting"
+        viewed: "Viewed"
+        description: "Description"
+        number_of_page: "Number of page: "
+        category_name: "Category Name: "
       list_book:
         delete: "delete"
         edit: "edit"
@@ -306,24 +307,33 @@ en:
         content: "Content review:"
         delete: "Delete"
         back: "Back to Manager page"
+    comments:
+      index:
+        manage_comment: "Manage Comments"
+      comment:
+        name_user: "Name user"
+        comment_content: "Comment content"
+        to_review: "to Review"
+        delete: "Delete"
+        view: "View"
+      list_comment:
+        delete: "Delete"
+        view: "View"
+        you_sure: "You definitely want to delete!!!"
+      destroy:
+        comment_deleted: "Comment deleted"
+      show:
+        view_comment: "View Comment"
+        name_user: "Name user: "
+        content: "Comment content: "
+        review_content: "to Review:"
+        back: "Back to Manager page"
+        delete: "Delete"
+        you_sure: "You definitely want to delete!!!"
   books:
     index:
-      manage_book: "Manage books"
-      add_book: "Add new book"
-      new_book: "New book"
-      no_book: "No book"
       all_books: "All Books"
     book:
-      Image: "Image"
-      Title: "Title"
-      Pages: "Pages"
-      Rate: "Rate"
-      Description: "Description"
-      Author: "Author"
-      Category: "Category"
-      delete: "delete"
-      edit: "edit"
-      you_sure: "You definitely want to delete!!!"
       rating: "Rating"
       read: "Read"
       waiting: "Waiting"
@@ -331,15 +341,6 @@ en:
       description: "Description"
       number_of_page: "Number of page: "
       category_name: "Category Name: "
-    new_book:
-      new_book: "Title:"
-      enter_name: "Enter here..."
-      num_page: "Num pages:"
-      description: "Description:"
-      author: "Author:"
-      category: "Category:"
-      picture: "Picture:"
-      add: "ADD"
     show:
       title: "Books"
       author: "Author: "
@@ -348,31 +349,6 @@ en:
       description: "Description"
       reviews: "Reviews"
       not_found: "Not found"
-    destroy:
-      no_book: "Not found book"
-      book_deleted: "Book deleted"
-      book_no_deleted: "Book no delete"
-    create:
-      book_created: "Book created"
-      book_no_created: "Book no create"
-    edit:
-      edit: "Edit book"
-      new_book: "Title:"
-      enter_name: "Enter here..."
-      num_page: "Num pages:"
-      description: "Description:"
-      author: "Author:"
-      category: "Category:"
-      picture: "Picture:"
-      save: "Save changes"
-    update:
-      book_updated: "Book updated"
-    list_book:
-      delete: "Delete"
-      edit: "Edit"
-      you_sure: "You definitely want to delete!!!"
-    index:
-      all_books: "All Books"
   reviews:
     form:
       please_enter_review: "Please enter your review here..."
@@ -411,3 +387,4 @@ en:
   mailers:
     user_mailer:
       account_activation: "Account activation"
+
