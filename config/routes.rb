@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     resources :categories
     resources :users, only: %i(index destroy)
     resources :books
+    resources :feedbacks, :reviews, :comments, only: %i(index destroy show)
   end
   resources :account_activations, only: :edit
+  resources :books do
+    resources :reviews
+  end
 end

@@ -1,6 +1,6 @@
 module Admin
   class AdminController < ApplicationController
-    layout "layouts/admin"
+    layout "admin/admin"
     before_action :verify_admin
 
     def index; end

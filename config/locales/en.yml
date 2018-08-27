@@ -1,114 +1,51 @@
 en:
-  application_helper:
-    book_framgia: "Book FRAMGIA"
-
-  static_pages:
-    home:
-      title1: "Book FRAMGIA"
-      home: "Home"
-    help:
-      title2: "Help User"
-      help: "Help"
-    about:
-      about: "About"
-      book_app: "| BOOK APP"
-    contact:
-      contact: "Contact"
-      book_app: "| BOOK APP"
-
-  details:
-    info:
-      author: "Author: "
-      andrew: "Andrew Matthews"
-      category: "Category: "
-      tamly: "Tam ly - Ky nang song"
-      name1: "[HAN-OE9-R]Nguyen Thanh Cong"
-      branch: "Branch of book: "
-      office: "HANDICO OFFICE"
-      activities: "Activities"
-      rating: "Rating"
-      read: "Read"
-      waiting: "Waiting"
-      viewed: "Viewed"
-      description: "Description"
-      title: "Happiness Now"
-      status: "Status"
-      shared_by: "Shared by: "
-
   layouts:
-    menu:
-      title: "BOOK FRAMGIA"
+    header:
+      books: "Books"
       home: "Home"
       help: "Help"
-      login: "Log In"
-      signup: "Sign Up"
+      login: "Log in"
+      signup: "Sign up"
       logout: "Log out"
       profile: "Profile"
       setting: "Settings"
       users: "Users"
       account: "Account"
+      category: "Category"
       manager: "Manager"
-      manage_user: "Manage Users"
-      manage_category: "Manage Categories"
-      manage_authors: "Manage Author"
-    slogan:
-      slogan: "Welcome to Book FRAMGIA"
-    content:
-    search_book:
-      search_book: "Search Book"
-      more: More
-    Top_follow_book:
-      rank: "Top Follow BOOK"
-      name1: "[HAN-OE9-R]Nguyen Thanh Cong"
-      handico_office: "Handico Office"
-      shared_by: "Shared By"
-    book_update:
-      book_update: "New Update Books"
-      more: More
-      handico_office: "Handico Office"
-      shared_by: "Shared By"
-    book_viewed:
-      book_view: "Top Viewed Books"
-      more: More
-      handico_office: "Handico Office"
-      shared_by: "Shared By"
-    book_read:
-      book_read: "Top Read Books"
-      more: More
-      handico_office: "Handico Office"
-      shared_by: "Shared By"
-    book_rating:
-      more: More
-      book_rating: "Top Rating Books"
-      handico_office: "Handico Office"
-      shared_by: "Shared By"
-    book_waiting:
-      more: More
-      book_waiting: "Top Waiting Books"
-      handico_office: "Handico Office"
-      shared_by: "Shared by :"
+    application:
+      base_title: "Book Review"
     footer:
       about: "About"
       guide: "User Guide"
       feedback: "Feedback"
       contact: "Contact Us"
-      address: "13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road, Nam Tu Liem, Ha Noi, Viet Nam."
-      email: "education@framgia.com"
       phone: "84-4-3795-5417"
+      email: "education@framgia.com"
+      address: "13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road,
+        Nam Tu Liem, Ha Noi, Viet Nam."
       social: "Social"
+    slogan:
+      slogan: "Welcome to our book library"
     admin:
-      navigation: "Navigation"
-      back_home: "Back home"
-      manage_users: "Manage Users"
-      manage_authors: "Manage Authors"
-      manage_categories: "Manage Categories"
-      manage_books: "Manage Books"
-      manage_feedbacks: "Manage Feedbacks"
-
+      admin:
+        base_title: "Book Reviews"
+        navigation: "Navigation"
+        back_home: "Back home"
+        manage_users: "Manage Users"
+        manage_authors: "Manage Authors"
+        manage_categories: "Manage Categories"
+        manage_books: "Manage Books"
+        manage_feedbacks: "Manage Feedbacks"
+        manage_reviews: "Manage Reviews"
+        manage_comments: "Manage Comments"
   shared:
     error_messages:
       form_contain: "The form contains "
       error: "error"
+    show_new_update_book:
+      new_update_book: "New Update Books"
+      more: "More"
   users:
     new:
       signup: "Sign up"
@@ -122,6 +59,10 @@ en:
       check_email_link: "Please check your email to activate your account."
     show:
       not_found: "The user didn't found"
+      developer: "Developer"
+      follow: "Follow"
+      account_settings: "Account Settings"
+      request: "Request"
     edit:
       edit_user: "Edit user"
       save_changes: "Save changes"
@@ -152,7 +93,8 @@ en:
       forgot_password: "(Forgot password)"
     create:
       invalid_combination: "Invalid email/password combination"
-      account_not_activated_check_email_link: "Account not activated. Check your email for the activation link."
+      account_not_activated_check_email_link: "Account not activated.
+        Check your email for the activation link."
       invalid_combination: "Invalid email/password combination"
   user_mailer:
     account_activation:
@@ -167,7 +109,9 @@ en:
       hi: "Hi"
       link_expire: "This link will expire in two hours."
       click_link: "To reset your password click the link below:"
-  account_activations:
+  mailers:
+    user_mailer:
+      account_activation: "Account activation"
     edit:
       not_found: "Not found"
       account_activated: "Account activated!"
@@ -210,7 +154,7 @@ en:
         enter_name: "Enter new author......"
         add: "ADD"
       edit:
-        edit: "Edit author"
+        edit: "Edit Author"
         edit_name: "Edit name author:"
         save: "Save changes"
       destroy:
@@ -235,7 +179,7 @@ en:
         enter_name: "Enter new category..."
         add: "ADD"
       edit:
-        edit: "Edit category"
+        edit: "Edit Category"
         edit_name: "Edit name category:"
         save: "Save changes"
       update:
@@ -274,6 +218,17 @@ en:
         delete: "delete"
         edit: "edit"
         you_sure: "You definitely want to delete!!!"
+        rating: "Rating"
+        read: "Read"
+        waiting: "Waiting"
+        viewed: "Viewed"
+        description: "Description"
+        number_of_page: "Number of page: "
+        category_name: "Category Name: "
+      list_book:
+        delete: "delete"
+        edit: "edit"
+        you_sure: "You definitely want to delete!!!"
       new_book:
         new_book: "Title:"
         enter_name: "Enter here..."
@@ -291,7 +246,7 @@ en:
         book_created: "Book created"
         book_no_created: "Book no create"
       edit:
-        edit: "Edit book"
+        edit: "Edit Book"
         new_book: "Title:"
         enter_name: "Enter here..."
         num_page: "Num pages:"
@@ -306,3 +261,154 @@ en:
         delete: "Delete"
         edit: "Edit"
         you_sure: "You definitely want to delete!!!"
+        add: "ADD"
+      update:
+        book_updated: "Book updated"
+    feedbacks:
+      index:
+        managefeedback: "Manage Feedbacks"
+      feedback:
+        name_user: "Name user"
+        content: "Content"
+      list_feedback:
+        delete: "Delete"
+        view: "View"
+        you_sure: "You definitely want to delete!!!"
+      destroy:
+        feedback_deleted: "Feedbacks deleted"
+      show:
+        view_feedback: "View Feedback"
+        name_user: "Name user: "
+        content: "Content: "
+        back: "Back to Manager page"
+        delete: "Delete"
+        you_sure: "You definitely want to delete!!!"
+    reviews:
+      index:
+        manage_review: "Manage Reviews"
+      review:
+        name_user: "Name user"
+        content: "Content review"
+        num_rate: "Number rate"
+        name_book: "Name book"
+        delete: "Delete"
+        view: "View"
+      list_review:
+        delete: "Delete"
+        view: "View"
+        you_sure: "You definitely want to delete!!!"
+      destroy:
+        review_deleted: "Review deleted"
+      show:
+        view_review: "View Reviews"
+        name_user: "Name user:"
+        num_rate: "Number rate:"
+        name_book: "Name book:"
+        content: "Content review:"
+        delete: "Delete"
+        back: "Back to Manager page"
+    comments:
+      index:
+        manage_comment: "Manage Comments"
+      comment:
+        name_user: "Name user"
+        comment_content: "Comment content"
+        to_review: "to Review"
+        delete: "Delete"
+        view: "View"
+      list_comment:
+        delete: "Delete"
+        view: "View"
+        you_sure: "You definitely want to delete!!!"
+      destroy:
+        comment_deleted: "Comment deleted"
+      show:
+        view_comment: "View Comment"
+        name_user: "Name user: "
+        content: "Comment content: "
+        review_content: "to Review:"
+        back: "Back to Manager page"
+        delete: "Delete"
+        you_sure: "You definitely want to delete!!!"
+
+  books:
+    index:
+      all_books: "All Books"
+    book:
+      rating: "Rating"
+      read: "Read"
+      waiting: "Waiting"
+      viewed: "Viewed"
+      description: "Description"
+      number_of_page: "Number of page: "
+      category_name: "Category Name: "
+    show:
+      title: "Books"
+      author: "Author: "
+      category: "Category: "
+      status: "Status"
+      description: "Description"
+      reviews: "Reviews"
+      not_found: "Not found"
+
+  reviews:
+    form:
+      please_enter_review: "Please enter your review here..."
+      review: "Review"
+      your_review: "Your Review"
+    review:
+      edit: "Edit"
+      destroy: "Destroy"
+      you_sure: "You sure?"
+      update: "Update your review"
+      your_review: "Your review"
+      please_enter_review: "Please enter your review here..."
+      reply: "Reply"
+      like: "Like"
+      save_changes: "Save changes"
+      not_found: "Not found"
+    create:
+      success: "Success"
+      error: "Error"
+      not_found: "Not found"
+      login_request: "Please login"
+    destroy:
+      deleted: "Deleted your review"
+      delete_failed: "Delete failed"
+      not_found: "Not found"
+      unauthorized: "Unauthorized"
+    update:
+      update_failed: "Update failed"
+      updated: "Updated"
+      unauthorized: "Unauthorized"
+    show:
+      not_found: "Not found"
+      delete_fail: "Delete fail"
+      not_found: "Not found"
+      unauthorized: "Unauthorized"
+
+  mailers:
+    user_mailer:
+      account_activation: "Account activation"
+
+  helpers:
+      base_title: "Book Review"
+
+  static_pages:
+    home:
+      home: "Home"
+      title: "Books"
+    help:
+      help: "Help"
+      title: "Help User"
+    about:
+      about: "About"
+    contact:
+      contact: "Contact"
+  shared:
+    error_messages:
+      form_contain: "The form contains "
+      error: "error"
+    show_new_update_book:
+      new_update_book: "New Update Books"
+      more: "More"

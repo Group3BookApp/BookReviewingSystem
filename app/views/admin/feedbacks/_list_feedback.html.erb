@@ -1,0 +1,17 @@
+<% @feedbacks.each do |feedback| %>
+  <table id="table-book" class="table table-condensed">
+    <tbody>
+      <tr>
+        <td class="col-md-3"><%= feedback.user.name %></td>
+        <td class="col-md-6"><%= feedback.content %></td>
+        <td class="col-md-1">
+          <%= link_to t(".delete"), admin_feedback_path(feedback), method: :delete,
+            class: "btn btn-danger", data: {confirm: t(".you_sure")} %>
+        </td>
+        <td class="col-md-1">
+          <%= link_to t(".view"), admin_feedback_path(feedback), class: "btn btn-info" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>

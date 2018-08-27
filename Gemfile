@@ -1,11 +1,10 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.5.1"
 gem "rails", "~> 5.2.0"
 gem "bootstrap-sass", "~> 3.3.7"
 gem "sprockets-rails", :require => "sprockets/railtie"
-gem "sqlite3"
 gem "puma", "~> 3.11"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
@@ -23,9 +22,10 @@ gem "carrierwave", "1.2.2"
 gem "mini_magick", "4.7.0"
 gem "rails-i18n"
 gem "figaro"
-gem "font-awesome-rails"
+gem "font-awesome-sass"
 
 group :development, :test do
+  gem "sqlite3"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
 end
 

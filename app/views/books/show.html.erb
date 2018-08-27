@@ -1,0 +1,128 @@
+<% provide :title, t(".title") %>
+<body data-spy="scroll" data-target="#mainmenu" data-offset="50">
+  <section class="relative fix gray-bg" id="details">
+    <div class="container">
+      <div class="row" id="info">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8
+          col-md-offset-2 text-center">
+          <h2><%= @book.title %></h2>
+          <span></span>
+          <div id="confirmMessage"></div>
+          <div class="space-10"></div>
+          <div class="title-bar blue">
+            <ul class="list-inline list-unstyled">
+              <li><i class="fa fa-square"></i></li>
+              <li><i class="fa fa-square"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row relative-position fix">
+        <div class="col-xs-12 col-md-6 padding60">
+          <div class="book-list-photo">
+            <div class="book-list owl-carousel owl-theme owl-center owl-loaded">
+              <div class="owl-stage-outer">
+                <div class="owl-stage">
+                  <div class="book-item" id="info_image">
+                    <%= link_to image_tag("happiness-now.jpg", alt: "list book"),
+                      "app/assets/images/happiness-now.jpg" %>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-controls">
+                <div class="owl-nav">
+                </div>
+                <div class="owl-dots">
+                  <div class="owl-dot active">
+                    <span></span>
+                  </div>
+                  <div class="owl-dot">
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 pull-right col-md-6 padding60 wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
+          <div class="book-content">
+            <div class="book-details-item">
+              <div class="row">
+                <p>
+                </p>
+                <h4 class="tip-left"><%= t ".author" %><span class="text-warning"><%= @book.author.name %></span></h4>
+                <p></p>
+                <div class="rating-container rating-xs rating-animate
+                rating-disabled"></div>
+              </div>
+              <div class="space-10"></div>
+              <div class="row">
+                <p>
+                </p>
+                <h4 class="tip-left"><%= t ".category" %><span class="text-warning"><%= @book.category.name %></span></h4>
+                <p></p>
+              </div>
+              <div class="space-10"></div>
+              <div class="row">
+                <h4 class="tip-left">Number of pages: <span class="text-warning"><%= @book.num_page %></span></h4>
+              </div>
+              <div class="space-20 hide-book"></div>
+              <div class="row">
+                <div class="check-status">
+                  <h3><%= t ".status" %></h3>
+                  <%= form_for :status, url: "#" do |f| %>
+                    <%= f.label :reading, class: "checkbox inline" do %>
+                      <%= f.check_box :reading_me %>
+                      <span><%= t ".reading" %></span>
+                    <% end %>
+                    <%= f.label :returned, class: "checkbox inline" do %>
+                      <%= f.check_box :returned_me %>
+                      <span><%= t ".returned" %></span>
+                    <% end %>
+                    <%= f.label :returning, class: "checkbox inline" do %>
+                      <%= f.check_box :returning_me %>
+                      <span><%= t ".returning" %></span>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="row btn-action">
+                <div><h3><%= t ".activities" %></h3>
+                  <div id="button_info">
+                    <button class="button-rating pure-button"><%= t ".rating" %></button>
+                    <button class="button-read pure-button"><%= t ".read" %></button>
+                    <button class="button-waiting pure-button"><%= t ".waiting" %></button>
+                    <button class="button-viewed pure-button"><%= t ".viewed" %></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="description">
+        <h3><strong><%= t ".description" %></strong></h3>
+        <div class="more fix-text"><%= @book.description %></div>
+      </div>
+      <div class="space-40"></div>
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 text-center">
+        <div class="title-bar blue">
+      <ul class="list-inline list-unstyled">
+        <li><i class="fa fa-square"></i></li>
+        <li><i class="fa fa-square"></i></li>
+      </ul>
+        </div>
+      </div>
+      <div class="space-40"></div>
+      <div id="review-form">
+        <%= render "reviews/form" %>
+        <h2><%= Settings.select_5 %>/<%= @book.reviews.count %> <%= t ".reviews" %></h2>
+      </div>
+      <div class="space-50"></div>
+    </div>
+    <div>
+      <%= render @book_reviews %>
+    </div>
+    <div class="space-100"></div>
+  </section>
+</body>
