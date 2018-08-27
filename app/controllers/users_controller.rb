@@ -43,7 +43,7 @@ class UsersController < ApplicationController
     else
       flash[:error] = t ".delele_fail"
     end
-    redirect_to manage_user_url
+    redirect_to users_url
   end
 
   private
@@ -57,13 +57,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :name, :email, :address, :password,
       :password_confirmation
-  end
-
-  def logged_in_user
-    return if logged_in?
-    store_location
-    flash[:danger] = t ".login_request"
-    redirect_to login_url
   end
 
   def correct_user

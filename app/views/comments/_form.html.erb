@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 col-md-offset-1">
+      <%= form_for @comment, class: "form-group" do |f| %>
+        <%= f.label :content, class: "col-md-3 control-label" %>
+        <%= f.text_area :content, placeholder: t(".please_enter_comment"), class: "form-control", rows: "5" %>
+        <%= f.button t(".comment"), class: "btn btn-success" %>
+        <%= f.hidden_field :review_id, value: review.id %>
+        <%= f.hidden_field :book_id, value: @book.id %>
+      <% end %>
+    </div>
+  </div>
+</div>

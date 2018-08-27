@@ -40,7 +40,7 @@ end
   Author.create! name: name
 end
 
-20.times do |n|
+50.times do |n|
   title = FFaker::Book.title
   num_page = "#{n+100}"
   avg_rate = "0.6"
@@ -62,9 +62,18 @@ users = User.order(:created_at).take(6)
 end
 
 books = Book.order(:created_at).take(6)
-20.times do
+5.times do
   content = FFaker::Lorem.sentence(5)
   user_id = rand 1..10
   num_rate = rand 1..5
   books.each {|book| book.reviews.create!(content: content, num_rate: num_rate, user_id: user_id)}
+end
+
+reviews = Review.order(:created_at).take(6)
+2.times do
+  content = FFaker::Lorem.sentence(5)
+  user_id = rand 1..10
+  review_id = rand 1..20
+  reviews.each {|review| review.comments.create!(content: content,
+    user_id: user_id, review_id: review_id)}
 end

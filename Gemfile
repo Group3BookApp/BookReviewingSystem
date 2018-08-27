@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.5.1"
@@ -23,7 +23,7 @@ gem "carrierwave", "1.2.2"
 gem "mini_magick", "4.7.0"
 gem "rails-i18n"
 gem "figaro"
-gem "font-awesome-rails"
+gem "font-awesome-sass"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

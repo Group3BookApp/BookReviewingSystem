@@ -1,0 +1,15 @@
+<div class="row border-box">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-10">
+    <div class="media">
+      <div class="media-left">
+        <img src="https://www.w3schools.com/bootstrap/img_avatar2.png" class="media-object" style="width:45px"> <!-- style="width:45px" -->
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= @comment.user_name %> <small><i><%#= time_ago_in_words @comment.created_at %></i></small></h4>
+        <p> <%= @comment.content %></p>
+      </div>
+    </div>
+  </div>
+</div>

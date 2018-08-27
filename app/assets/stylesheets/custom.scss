@@ -1,6 +1,31 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import 'theme.min.css';
+@import 'animate.min.css';
+@import 'profile.css';
 @import 'color';
+
+/* mixins, variables, etc. */
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* universal */
 
 body {
   padding-top: 60px;
@@ -41,89 +66,47 @@ p {
   line-height: 1.7em;
 }
 
-/* footer */
-
-footer{
-  background-image: url(http://lovedia.vn/wp-content/uploads/2016/05/moon-7.jpg);
-  color: $color_yellow;
-  padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  display: block;
-  small {
-    float: left;
-  }
-}
-
-.header-text{
-  color: $color_yellow;
-  background-image: url(http://lovedia.vn/wp-content/uploads/2016/05/moon-7.jpg);
-}
-
-.jumbotron{
-  position: relative;
-  background-color: initial;
-  #slogan:hover{
-    color: $color_blue;
-  }
-}
-
-nav a{
-  color: $color_nav;
-  text-align: center;
-}
-
-.badge a{
-  color: $color_badge;
-}
-
-/* FORM SIGNUP */
-
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 /* sidebar */
 
-aside{
-  section.user_info{
+aside {
+  section.user_info {
     margin-top: 20px;
   }
-  section{
+  section {
     padding: 10px 0;
     margin-top: 20px;
-    &:first-child{
+    &:first-child {
       border: 0;
       padding-top: 0;
     }
-    span{
+    span {
       display: block;
       margin-bottom: 3px;
       line-height: 1;
     }
-    h1{
+    h1 {
       font-size: 1.4em;
       text-align: left;
       letter-spacing: -1px;
       margin-bottom: 3px;
+      margin-top: 0px;
     }
   }
 }
 
-.gravatar{
+.gravatar {
   float: left;
   margin-right: 10px;
 }
 
-.gravatar_edit{
+.gravatar_edit {
   margin-top: 15px;
 }
 
-/* form */
+/* forms */
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid $color-bbb;
+  border: 1px solid $gray-lighter;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
@@ -148,18 +131,40 @@ input {
   }
 }
 
-.title_login{
-  font-size: 70px;
-  text-align: center;
-  font-weight: bold;
-  color: $color_a1;
+/* header*/
+
+header {
+  font-size: 18px;
 }
 
-.title_signup{
-  font-size: 70px;
-  text-align: center;
-  font-weight: bold;
-  color: $color_a2;
+#logo{
+  font-size: 24px;
+  color: $color_update;
+}
+
+.header-text{
+  color: $color_yellow;
+  background-image: url(http://lovedia.vn/wp-content/uploads/2016/05/moon-7.jpg);
+  margin-top: -9px;
+}
+
+.jumbotron {
+  background-color: initial;
+  position: relative;
+  h1#slogan:hover{
+    color: $color_blue;
+  }
+  margin: 0;
+}
+
+#slogan{
+  text-shadow: 2px 2px 2px $color_slogan;
+}
+
+/* footer */
+
+footer {
+  font-size: 18px;
 }
 
 .checkbox {
@@ -176,9 +181,9 @@ input {
   margin-left: 0;
 }
 
-/* TOP */
+/* new-update-book */
 
-#section1{
+#section1 {
   border-bottom: 1px dotted black;
   #new_update{
     color: $color_update_title;
@@ -186,182 +191,115 @@ input {
   #update:hover{
     border: 1px solid $color_update;
   }
-  #shared_by{
-    height: 198.1px;
-    #img_update img{
-      width: 120%;
-      height: 120%;
-      object-fit: contain;
-    }
+}
+
+#new_update {
+  margin-top: 40px;
+  font-weight: 300;
+  font-size: 35px;
+  font-family: "Ubuntu", Helvetica, Arial, sans-serif;
+  margin: 40px 20px 20px;
+}
+
+#new_update_object {
+  margin-top: 30px;
+}
+
+/* book */
+
+#update {
+  padding-top: 30px;
+}
+
+#img_update {
+  padding: 5px 53px;
+}
+
+/* detail-book */
+
+#button_info {
+  .button-rating,
+  .button-read,
+  .button-viewed,
+  .button-waiting {
+    color: $color_white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px $color_button_shadow;
+  }
+  .button-rating {
+    background: $color_button_rating; /* this is a green */
+  }
+  .button-read {
+    background: $color_button_read; /* this is a maroon */
+  }
+  .button-waiting {
+    background: $color_button_waiting; /* this is an orange */
+  }
+  .button-viewed {
+    background: $color_button_viewed; /* this is a light blue */
   }
 }
 
-#section2{
-  border-bottom: 1px dotted black;
-  #new_rating{
-    color: $color_rating_title;
-  }
-  #rating:hover{
-    border: 1px solid $color_rating;
-  }
-  #shared_by{
-    height: 198.1px;
-    #img_update img{
-      width: 120%;
-      height: 120%;
-      object-fit: contain;
-    }
+#info_image img {
+  width: 60%;
+  height: 70%;
+  object-fit: contain;
+  margin: 0 20%;
+}
+
+.list_book ul li {
+  display: inline-block;
+}
+
+.check-status {
+  display: inline-block;
+  width: 25%;
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
   }
 }
 
-#section3{
-  border-bottom: 1px dotted black;
-  #new_read{
-    color: $color_read_title;
-  }
-  #read:hover{
-    border: 1px solid $color_read;
-  }
-  #shared_by{
-    height: 198.1px;
-    #img_update img{
-      width: 120%;
-      height: 120%;
-      object-fit: contain;
-    }
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+#info {
+  h2{
+    font-weight: 300;
+    font-size: 35px;
+    font-family: "Ubuntu", Helvetica, Arial, sans-serif;
+    margin: 40px 20px 20px;
   }
 }
 
-#section4{
-  border-bottom: 1px dotted black;
-  #new_viewed{
-    color: $color_viewed_title;
-  }
-  #viewed:hover{
-    border: 1px solid $color_viewed;
-  }
-  #shared_by{
-    height: 198.1px;
-    #img_update img{
-      width: 120%;
-      height: 120%;
-      object-fit: contain;
-    }
+h4{
+  font-weight: 500;
+  color: $color_gray_darker;
+}
+
+.book-details-item {
+  h4.tip-left {
+    font-size: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 }
 
-#section5{
-  border-bottom: 1px dotted black;
-  #new_waiting{
-    color: $color_waiting_title;
-  }
-  #waiting:hover{
-    border: 1px solid $color_waiting;
-  }
-  #shared_by{
-    height: 198.1px;
-    #img_update img{
-      width: 120%;
-      height: 120%;
-      object-fit: contain;
-    }
-  }
+#description {
+  padding: 0px 50px;
+  font-size: 17px;
+  font-family: "Times New Roman", Helvetica, Arial, sans-serif;
 }
 
-#section0{
-  #rank{
-    color: $color_rank;
-  }
-  #name{
-    color: $color_update_title;
-  }
-}
-
-/* Info */
-
-#details{
-  #info{
-    margin-top: 3%
-  }
-  #button_info{
-    .button-rating,
-    .button-read,
-    .button-viewed,
-    .button-waiting {
-      color: $color_white;
-      border-radius: 4px;
-      text-shadow: 0 1px 1px $color_button_shadow;
-    }
-    .button-rating {
-      background: $color_button_rating; /* this is a green */
-    }
-    .button-read {
-      background: $color_button_read; /* this is a maroon */
-    }
-    .button-waiting {
-      background: $color_button_waiting; /* this is an orange */
-    }
-    .button-viewed {
-      background: $color_button_viewed; /* this is a light blue */
-    }
-  }
-  #info_image img{
-    width: 60%;
-    height: 70%;
-    object-fit: contain;
-    margin-left: 20%;
-  }
-  .list_book ul li{
-    display: inline-block;
-  }
-  .check-status{
-    display: inline-block;
-    width: 25%;
-  }
-  #description{
-    margin-top: 5%;
-  }
-}
-
-/* Content */
-
-#content1{
-  margin: 0 auto;
-  background-color: $color_content1;
-  #content2{
-    border-right: 1px dotted $color_black;
-  }
-}
-
-/* Search */
-
-#search{
-  border-bottom: 2px solid $color_red;
-  #search_book{
-    color: $color_search;
-    .search-result{
-      display: block;
-    }
-  }
-}
-
-/* slogan */
-
-#slogan{
-  text-shadow: 2px 2px 2px $color_slogan;
-}
-
-/* menu */
-
-#menu0{
-  font-family: Arial;
-  background-color: $color_title;
-  #menu1{
-    font-size: 30px;
-  }
-  #menu2{
-    font-size: 18px;
-  }
+#detail-book {
+  clear: both;
+  padding: 10px 5px; text-align: center;
 }
 
 /* Users index */
@@ -381,11 +319,37 @@ input {
   vertical-align: middle;
 }
 #table-book-th td{
-  color: $color_c2;
+  color: $color_white;
   background-color: $color_table_th;
   text-align: center;
   vertical-align: middle;
 }
 #color_body{
   background-color: $color_body
+}
+
+/* form review book */
+
+#review-form {
+  margin-left: 30px;
+}
+
+.user-review-imgage {
+  width: 80%;
+  padding-left: 20px;
+}
+
+.border-box {
+  margin: 0;
+  padding: 30px 20px;
+  border: 1px solid $color_gray_lighter;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.float-right {
+  float: right;
+}
+
+.time{
+  font-size: 12px;
 }

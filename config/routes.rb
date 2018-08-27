@@ -20,4 +20,8 @@ Rails.application.routes.draw do
     resources :feedbacks, :reviews, only: %i(index destroy show)
   end
   resources :account_activations, only: :edit
+  resources :books, only: %i(show index) do
+    resources :reviews
+  end
+  resources :comments
 end
