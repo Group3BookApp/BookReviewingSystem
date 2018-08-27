@@ -3,7 +3,11 @@ module Admin
     before_action :load_author, only: %i(edit update destroy)
 
     def index
-      @author = Author.page(params[:page]).per Settings.per_page
+      if params[:search]
+        @author = Author.search_name(params[:search]).page(params[:page]).per Settings.per_page
+      else
+        @author = Author.page(params[:page]).per Settings.per_page
+      end
     end
 
     def create

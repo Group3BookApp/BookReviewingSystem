@@ -10,9 +10,30 @@
             class: "btn btn-danger", data: {confirm: t(".you_sure")} %>
         </td>
         <td class="col-md-1">
-          <%= link_to t(".view"), admin_comment_path(comment), class: "btn btn-info" %>
+          <%= link_to t(".view"), "#{}",data: {toggle: "modal",
+            target: "#comment-#{comment.id}"}, class: "btn btn-info" %>
         </td>
       </tr>
     </tbody>
   </table>
+  <div id="comment-<%=comment.id%>" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"><%= t ".view_comment" %></h4>
+        </div>
+        <div class="modal-body">
+          <h4><%= t ".name_user" %></h4>
+          <h2><%= comment.name %></h2>
+          <h4><%= t ".content" %></h4>
+          <p><%= comment.content %></p>
+          <h4><%= t ".review_content" %></h4>
+          <p><%= comment.review.content %></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal"><%= t ".close" %></button>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>

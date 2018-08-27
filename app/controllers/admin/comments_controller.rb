@@ -3,8 +3,13 @@ module Admin
     before_action :load_comment, only: %i(show destroy)
 
     def index
-      @comments = Comment.by_select_comment.page(params[:page]).by_order
-        .per Settings.per_page
+      if params[:search]
+        @comments = Comment.search_comment(params[:search]).by_select_comment
+          .page(params[:page]).by_order.per Settings.per_page
+      else
+        @comments = Comment.by_select_comment.page(params[:page]).by_order
+          .per Settings.per_page
+      end
     end
 
     def show; end

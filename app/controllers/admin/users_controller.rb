@@ -3,7 +3,12 @@ module Admin
     before_action :load_user, only: :destroy
 
     def index
-      @user = User.page(params[:page]).per Settings.per_page
+      if params[:search]
+        @user = User.admin_search_user(params[:search]).page(params[:page])
+          .ordered.per Settings.per_page
+      else
+        @user = User.page(params[:page]).per Settings.per_page
+      end
     end
 
     def destroy

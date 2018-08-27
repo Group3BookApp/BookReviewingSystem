@@ -2,15 +2,16 @@
   <table id="table-book" class="table table-condensed">
     <tbody >
       <tr>
-        <td rowspan="2" class="col-md-1"><%= image_tag book.picture.url if book.picture? %></td>
+        <td rowspan="2" class="col-md-1"><%= image_tag book.picture.url %></td>
         <td rowspan="2" class="col-md-2"><%= book.title %></td>
         <td class="col-md-1"><%= book.num_page %></td>
         <td rowspan="2"><%= truncate(book.description, length: Settings.truncate_description) %></td>
         <td class="col-md-2"><%= book.author.name %></td>
         <td rowspan="2" class="col-md-1"><%= link_to t(".delete"), admin_book_path(book),method: :delete,
           class: "btn btn-danger", data: {confirm: t(".you_sure")} %></td>
-        <td rowspan="2" class="col-md-1"><%= link_to t(".edit"), edit_admin_book_path(book),
-          class: "btn btn-primary" %></td>
+        <td rowspan="2" class="col-md-1">
+          <%= link_to t(".edit"), "#", data: {toggle: "modal",
+            target: "#book-#{book.id}"}, class: "btn btn-primary" %></td>
       </tr>
       <tr>
         <td><%= book.avg_rate %></td>
@@ -18,4 +19,38 @@
       </tr>
     </tbody>
   </table>
+  <div id="book-<%=book.id%>" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"><%= t ".edit_book" %></h4>
+        </div>
+        <div class="modal-body">
+          <%= form_for [:admin, book] do |f| %>
+          <div class="field">
+            <%= f.label :title, t(".new_book") %>
+            <%= f.text_field :title, class: "form-control" %>
+            <%= f.label :num_page, t(".num_page") %>
+            <%= f.text_field :num_page, class: "form-control" %>
+            <%= f.label :description, t(".description") %>
+            <%= f.text_area :description %>
+            <%= f.label :author_id, t(".author") %>
+            <%= f.collection_select :author_id, @author_name,:id,:name,
+              include_blank: false %>
+            <%= f.label :category_id, t(".category") %>
+            <%= f.collection_select :category_id, @category_name,:id,:name,
+              include_blank: false %>
+            <%= f.label :picture, t(".picture") %>
+            <%= f.file_field :picture %>
+            <p><%= image_tag book.picture.url %></p>
+          </div>
+          <%= f.submit t(".save"), class: "btn btn-primary" %>
+        <% end %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal"><%= t ".close" %></button>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>

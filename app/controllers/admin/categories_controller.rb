@@ -3,7 +3,12 @@ module Admin
     before_action :load_category, only: %i(edit update destroy)
 
     def index
-      @category = Category.page(params[:page]).per Settings.per_page
+      if params[:search]
+        @category = Category.search_cate(params[:search]).page(params[:page])
+          .per Settings.per_page
+      else
+        @category = Category.page(params[:page]).per Settings.per_page
+      end
     end
 
     def create

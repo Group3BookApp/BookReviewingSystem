@@ -145,10 +145,20 @@ en:
         enter_name: "Enter new author..."
         add: "ADD"
         not_admin: "The page you were looking for doesn't exist (404)"
+        refresh: "Refresh"
+        search_name: "Search name Author"
+        new_author: "New Author"
+        close: "Close"
+      search_name:
+        enter_search: "Enter search..."
+        search: "Search!"
       author:
         delete: "Delete"
         edit: "Edit"
         you_sure: "You definitely want to delete!!!"
+        edit_author: "Edit Author"
+        edit_name: "Edit name author:"
+        save: "Save changes"
       new_author:
         new_author: "New author:"
         enter_name: "Enter new author......"
@@ -170,18 +180,24 @@ en:
       index:
         manage_category: "Manage Categories"
         not_admin: "The page you were looking for doesn't exist (404)"
+        refresh: "Refresh"
+        search_name: "Search name Category"
+        new_category: "New Category"
+        close: "Close"
+      search_name:
+        enter_search: "Enter search..."
+        search: "Search!"
       category:
         delete: "Delete"
         edit: "Edit"
         you_sure: "You definitely want to delete!!!"
+        edit_category: "Edit Category"
+        edit_name: "Edit name category:"
+        save: "Save changes"
       new_category:
         new_category: "New category:"
         enter_name: "Enter new category..."
         add: "ADD"
-      edit:
-        edit: "Edit Category"
-        edit_name: "Edit name category:"
-        save: "Save changes"
       update:
         updated: "Category updated"
       destroy:
@@ -194,6 +210,12 @@ en:
       index:
         manage_users: "Manage Users"
         not_admin: "The page you were looking for doesn't exist (404)"
+        refresh: "Refresh"
+        search_name: "Search name User"
+        close: "close"
+      search_name:
+        enter_search: "Enter search..."
+        search: "Search!"
       user:
         delete: "Delete"
         you_sure: "You definitely want to delete!!!"
@@ -207,6 +229,14 @@ en:
         add_book: "Add new book"
         new_book: "New book"
         no_book: "No book"
+        not_admin: "The page you were looking for doesn't exist (404)"
+        refresh: "Refresh"
+        search_name: "Search title Book"
+        new_book: "New book"
+        close: "close"
+      search:
+        enter_search: "Enter search..."
+        search: "Search!"
       book:
         Image: "Image"
         Title: "Title"
@@ -229,6 +259,16 @@ en:
         delete: "delete"
         edit: "edit"
         you_sure: "You definitely want to delete!!!"
+        edit_book: "Edit Book"
+        new_book: "Title:"
+        enter_name: "Enter here..."
+        num_page: "Num pages:"
+        description: "Description:"
+        author: "Author:"
+        category: "Category:"
+        picture: "Picture:"
+        save: "Save changes"
+        close: "close"
       new_book:
         new_book: "Title:"
         enter_name: "Enter here..."
@@ -245,47 +285,42 @@ en:
       create:
         book_created: "Book created"
         book_no_created: "Book no create"
-      edit:
-        edit: "Edit Book"
-        new_book: "Title:"
-        enter_name: "Enter here..."
-        num_page: "Num pages:"
-        description: "Description:"
-        author: "Author:"
-        category: "Category:"
-        picture: "Picture:"
-        save: "Save changes"
       update:
         book_updated: "Book updated"
-      list_book:
-        delete: "Delete"
-        edit: "Edit"
-        you_sure: "You definitely want to delete!!!"
-        add: "ADD"
       update:
         book_updated: "Book updated"
     feedbacks:
       index:
         managefeedback: "Manage Feedbacks"
+        refresh: "Refresh"
+        search_content: "Search content Feedback"
+        close: "close"
+      search:
+        enter_search: "Enter search..."
+        search: "Search!"
       feedback:
         name_user: "Name user"
         content: "Content"
+        delete: "Delete"
+        view: "View"
       list_feedback:
         delete: "Delete"
         view: "View"
         you_sure: "You definitely want to delete!!!"
-      destroy:
-        feedback_deleted: "Feedbacks deleted"
-      show:
         view_feedback: "View Feedback"
         name_user: "Name user: "
         content: "Content: "
-        back: "Back to Manager page"
-        delete: "Delete"
-        you_sure: "You definitely want to delete!!!"
+      destroy:
+        feedback_deleted: "Feedbacks deleted"
     reviews:
       index:
         manage_review: "Manage Reviews"
+        refresh: "Refresh"
+        search_content: "Search content Review"
+        close: "close"
+      search:
+        enter_search: "Enter search..."
+        search: "Search!"
       review:
         name_user: "Name user"
         content: "Content review"
@@ -297,39 +332,39 @@ en:
         delete: "Delete"
         view: "View"
         you_sure: "You definitely want to delete!!!"
-      destroy:
-        review_deleted: "Review deleted"
-      show:
-        view_review: "View Reviews"
+        view_review: "View Review"
         name_user: "Name user:"
         num_rate: "Number rate:"
         name_book: "Name book:"
         content: "Content review:"
-        delete: "Delete"
-        back: "Back to Manager page"
+      destroy:
+        review_deleted: "Review deleted"
     comments:
       index:
         manage_comment: "Manage Comments"
+        refresh: "Refresh"
+        search_content: "Search content Comment"
+        close: "close"
+      search:
+        enter_search: "Enter search..."
+        search: "Search!"
       comment:
         name_user: "Name user"
         comment_content: "Comment content"
         to_review: "to Review"
         delete: "Delete"
         view: "View"
+        back: "Back to Manager page"
       list_comment:
         delete: "Delete"
         view: "View"
         you_sure: "You definitely want to delete!!!"
+        view_comment: "View Comment"
+        name_user: "Name User:"
+        content: "Comment content:"
+        review_content: "to Review:"
       destroy:
         comment_deleted: "Comment deleted"
-      show:
-        view_comment: "View Comment"
-        name_user: "Name user: "
-        content: "Comment content: "
-        review_content: "to Review:"
-        back: "Back to Manager page"
-        delete: "Delete"
-        you_sure: "You definitely want to delete!!!"
   books:
     index:
       all_books: "All Books"
@@ -387,4 +422,3 @@ en:
   mailers:
     user_mailer:
       account_activation: "Account activation"
-

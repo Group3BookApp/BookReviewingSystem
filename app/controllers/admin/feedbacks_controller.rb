@@ -3,8 +3,13 @@ module Admin
     before_action :load_feedback, only: %i(show destroy)
 
     def index
-      @feedbacks = Feedback.by_select_feedback.page(params[:page]).by_order
-        .per Settings.per_page
+      if params[:search]
+        @feedbacks = Feedback.search_feedback(params[:search]).by_select_feedback
+          .page(params[:page]).by_order.per Settings.per_page
+      else
+        @feedbacks = Feedback.by_select_feedback.page(params[:page]).by_order
+          .per Settings.per_page
+      end
     end
 
     def show; end

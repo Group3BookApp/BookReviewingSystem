@@ -4,7 +4,12 @@ module Admin
     before_action :load_author_category, only: %i(index edit)
 
     def index
-      @books = Book.by_select_book.page(params[:page]).by_order.per Settings.per_page
+      if params[:search]
+        @books = Book.search_book(params[:search]).by_select_book.page(params[:page])
+          .by_order.per Settings.per_page
+      else
+        @books = Book.by_select_book.page(params[:page]).by_order.per Settings.per_page
+      end
     end
 
     def edit; end
