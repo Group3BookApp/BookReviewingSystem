@@ -1,0 +1,57 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row border-box">
+      <div class="col-md-2">
+        <img src="https://image.ibb.co/jw55Ex/def_face.jpg"
+          class="img img-rounded img-fluid user-review-imgage "/>
+        <p class="text-secondary text-center"></p>
+      </div>
+      <div class="col-md-10">
+        <p>
+          <a class="float-left" href="#"><strong><%= review.user_name %></strong></a>
+          <span>
+            <% if logged_in? && (current_user.admin? || correct_review?(review)) %>
+              (<%= link_to t(".edit"), "#", data: {toggle: "modal",
+                    target: "#rev#{review.id}"} %> |
+              <%= link_to t(".destroy"), [review.book, review], method: :delete,
+                data: {confirm: t(".you_sure")} %>)
+            <% end %>
+          </span>
+          <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+          <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+          <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+          <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+          <br>
+          <span style="font-size: 12px;">
+            <%= time_ago_in_words review.created_at %>
+          </span>
+        </p>
+        <div class="modal" id="rev<%=review.id%>">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <h2><%= t ".update" %></h2>
+                <%= form_for [@book, review], class: "form-group" do |f| %>
+                  <%= render "shared/error_messages", object: f.object %>
+                  <%= f.label :content, t(".your_review"), class: "col-md-3 control-label" %>
+                  <%= f.text_area :content, placeholder: t(".please_enter_review"), class: "form-control", rows: "5" %>
+                  <%= f.button t(".save_changes"), class: "btn btn-success" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <p><%= review.content %></p>
+        <p>
+          <a class="float-right btn btn-primary ml-2">
+            <i class="fa fa-reply"></i> <%= t ".reply" %>
+          </a>
+          <a class="float-right btn text-white btn-danger">
+            <i class="fa fa-heart"></i> <%= t ".like" %>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
