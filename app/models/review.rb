@@ -1,8 +1,9 @@
 class Review < ApplicationRecord
   belongs_to :user
   belongs_to :book
+  has_many :comments, dependent: :destroy
   delegate :name, to: :user, prefix: true, allow_nil: true
-  delegate :title, to: :user, prefix: true, allow_nil: true
+  delegate :title, to: :book, prefix: true, allow_nil: true
   scope :by_select_review, -> {
     select :id, :content, :num_rate, :user_id, :book_id, :created_at
   }

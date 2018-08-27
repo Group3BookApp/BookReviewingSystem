@@ -16,7 +16,7 @@ User.create! name: "Admin_system1",
   activated: true,
   activated_at: Time.zone.now
 
-30.times do |n|
+10.times do |n|
   name = FFaker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
@@ -45,8 +45,8 @@ end
   num_page = "#{n+100}"
   avg_rate = "0.6"
   description = FFaker::Book.description sentence_count = 3
-  category_id = rand 1..5
-  author_id = rand 1..12
+  category_id = rand 1..20
+  author_id = rand 1..20
   Book.create! title: title,
     num_page: num_page,
     avg_rate: avg_rate,
@@ -56,15 +56,22 @@ end
 end
 
 users = User.order(:created_at).take(6)
-20.times do
-  content = FFaker::Lorem.sentence(5)
+20.times do |n|
+  content = "Feedback #{n+1}"
   users.each {|user| user.feedbacks.create!(content: content)}
 end
 
 books = Book.order(:created_at).take(6)
-20.times do
-  content = FFaker::Lorem.sentence(5)
+20.times do |n|
+  content = "Review #{n+1}"
   user_id = rand 1..10
   num_rate = rand 1..5
   books.each {|book| book.reviews.create!(content: content, num_rate: num_rate, user_id: user_id)}
+end
+
+reviews = Review.order(:created_at).take(6)
+20.times do |n|
+  content = "Comment #{n+1}"
+  user_id = rand 1..10
+  reviews.each {|review| review.comments.create!(content: content, user_id: user_id)}
 end
