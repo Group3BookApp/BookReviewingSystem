@@ -22,5 +22,6 @@ Rails.application.routes.draw do
   resources :account_activations, only: :edit
   resources :books do
     resources :reviews
+    resources :marks
   end
 end

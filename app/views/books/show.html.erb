@@ -69,21 +69,7 @@
               <div class="space-20 hide-book"></div>
               <div class="row">
                 <div class="check-status">
-                  <h3><%= t ".status" %></h3>
-                  <%= form_for :status, url: "#" do |f| %>
-                    <%= f.label :reading, class: "checkbox inline" do %>
-                      <%= f.check_box :reading_me %>
-                      <span><%= t ".reading" %></span>
-                    <% end %>
-                    <%= f.label :returned, class: "checkbox inline" do %>
-                      <%= f.check_box :returned_me %>
-                      <span><%= t ".returned" %></span>
-                    <% end %>
-                    <%= f.label :returning, class: "checkbox inline" do %>
-                      <%= f.check_box :returning_me %>
-                      <span><%= t ".returning" %></span>
-                    <% end %>
-                  <% end %>
+                  <%= render "marks/form" %>
                 </div>
               </div>
               <div class="row btn-action">
