@@ -43,7 +43,7 @@ class UsersController < ApplicationController
     else
       flash[:error] = t ".delele_fail"
     end
-    redirect_to users_url
+    redirect_to manage_user_url
   end
 
   private

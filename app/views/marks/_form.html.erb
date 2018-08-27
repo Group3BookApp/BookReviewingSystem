@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <h2 id="title_status">
+      <strong><%= t ".title_status" %>
+        <% if Mark.where(user_id: current_user.id).where(book_id: @book.id).count > 0 %> 
+        <%= Mark.where(user_id: current_user.id).where(book_id: @book.id).first.status %> 
+      <% end %>
+      </strong>
+    </h2>
+    <div class="col-md-3" id="row-mark">
+      <% if logged_in? %>
+        <%= form_for [@book, @mark], class: "form-group" do |f| %>
+          <%= render "shared/error_messages", object: f.object %>
+            <div>
+              <label>
+                <%= f.radio_button :status, "Returned" %><%= t ".returned" %>
+              </label>
+              <label>
+                <%= f.radio_button :status, "Reading" %><%= t ".reading" %>
+              </label>           
+              <label>
+                <%= f.radio_button :status, "Waiting" %><%= t ".waiting" %>
+              </label>
+              <%= f.button (t ".mark"), class: "btn btn-success btn-mark-book" %>
+            </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

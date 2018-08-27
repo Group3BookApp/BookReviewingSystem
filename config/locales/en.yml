@@ -330,6 +330,7 @@ en:
         back: "Back to Manager page"
         delete: "Delete"
         you_sure: "You definitely want to delete!!!"
+
   books:
     index:
       all_books: "All Books"
@@ -349,6 +350,7 @@ en:
       description: "Description"
       reviews: "Reviews"
       not_found: "Not found"
+
   reviews:
     form:
       please_enter_review: "Please enter your review here..."
@@ -384,7 +386,48 @@ en:
       delete_fail: "Delete fail"
       not_found: "Not found"
       unauthorized: "Unauthorized"
+
   mailers:
     user_mailer:
       account_activation: "Account activation"
 
+  helpers:
+      base_title: "Book Review"
+
+  static_pages:
+    home:
+      home: "Home"
+      title: "Books"
+    help:
+      help: "Help"
+      title: "Help User"
+    about:
+      about: "About"
+    contact:
+      contact: "Contact"
+  shared:
+    error_messages:
+      form_contain: "The form contains "
+      error: "error"
+    show_new_update_book:
+      new_update_book: "New Update Books"
+      more: "More"
+
+  marks:
+    form:
+      title_status: "Status:"
+      returned: "Returned"
+      reading: "Reading"
+      waiting: "Waiting"
+      mark: "Mark"
+    create:
+      success: "Mark Status Success"
+      error: "Mark Error"
+      not_found: "Not Found"
+    update:
+      updated: "Update Status Success"
+      update_failed: "Update Status Failed"
+    load_mark:
+      not_found: "Not Found"
+    load_in_user:
+      login_request: "Login Success" 

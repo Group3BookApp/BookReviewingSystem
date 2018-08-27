@@ -2,6 +2,7 @@ class Book < ApplicationRecord
   belongs_to :author
   belongs_to :category
   has_many :reviews, dependent: :destroy
+  has_many :marks, dependent: :destroy
   scope :by_order, -> {order created_at: :desc}
   scope :by_select_book, -> {
     select :id, :picture, :title, :num_page, :avg_rate, :description,

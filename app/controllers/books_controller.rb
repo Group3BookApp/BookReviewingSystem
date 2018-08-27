@@ -6,6 +6,11 @@ class BooksController < ApplicationController
   end
 
   def show
+    if Mark.where(user_id: current_user.id).where(book_id: @book.id).count > 0 
+      @mark = Mark.where(user_id: current_user.id).where(book_id: @book.id).first
+    else 
+      @mark = @book.marks.build
+    end
     @book_reviews = @book.reviews.by_order.select_5
   end
 
