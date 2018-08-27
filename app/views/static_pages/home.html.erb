@@ -1,5 +1,9 @@
 <% provide :title, t(".home") %>
 <title><%= full_title yield :title %></title>
-<%= render "layouts/header" %>
-<%= render "layouts/content" %>
-<%= render "layouts/footer" %>
+<div class = "container row gray-bg" id="content1">
+  <div class = "col-md-9 border-d6"  id="content2">
+    <%= render "shared/show_new_update_book", object: @new_update_books %>
+    <%= render "shared/show_new_update_book", object: @top_rating_books %>
+    <%= render "shared/show_new_update_book", object: @top_read_books %>
+  </div>
+</div>

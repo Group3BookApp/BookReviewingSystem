@@ -1,0 +1,19 @@
+<div class="col-xs-12 col-md-4 wow fadeInLeft" data-wow-delay = "0.1s"
+data-wow-offset ="50">
+  <div class="category-item well yellow" id="update">
+    <div class="media">
+      <div class="row">
+        <div class="media-left col-md-6" id="img_update">
+          <%= image_link_to "happiness-now.jpg", book_path(book),
+           alt: "list_book" %>
+        </div>
+        <div class="col-md-6 book-descrip"></div>
+      </div>
+      <div id="detail-book">
+        <strong><%= book.title %><br></strong>
+        <strong><%= t ".number_of_page" %></strong><%= book.num_page %><br>
+        <strong><%= t ".category_name" %></strong><%= book.category_name %><br>
+      </div>
+    </div>
+  </div>
+</div>

@@ -24,14 +24,12 @@ ActiveRecord::Schema.define(version: 2018_08_23_080735) do
     t.float "avg_rate"
     t.text "description"
     t.string "picture"
-    t.integer "user_id"
     t.integer "author_id"
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["category_id"], name: "index_books_on_category_id"
-    t.index ["user_id"], name: "index_books_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -55,7 +53,9 @@ ActiveRecord::Schema.define(version: 2018_08_23_080735) do
     t.integer "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["book_id", "created_at"], name: "index_reviews_on_book_id_and_created_at"
     t.index ["book_id"], name: "index_reviews_on_book_id"
+    t.index ["user_id", "created_at"], name: "index_reviews_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 

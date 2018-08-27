@@ -1,0 +1,27 @@
+<div class="container">
+  <section id="section1" class = "gray-bg">
+    <div class="container section-book col-md-12 border-d6">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 text-center">
+          <h2 id="new_update"><strong><%= t ".all_books" %></strong></h2>
+          <div class="space-10"></div>
+          <div class="title-bar blue">
+            <ul class="list-inline list-unstyled">
+              <li><i class="fa fa-square"></i></li>
+              <li><i class="fa fa-square"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class = "row fix" style="margin-top: 30px;">
+        <%= render @feed_items %>
+      </div>
+      <div class = "row">
+        <div class="col-md-12 border-d3 text-center">
+          <a class="btn btn-warning btn-xs uppercase" href="#"><%= t ".more" %></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <%= paginate @feed_items, theme: "twitter-bootstrap-3" %>
+</div>
