@@ -40,7 +40,7 @@ end
   Author.create! name: name
 end
 
-20.times do |n|
+50.times do |n|
   title = FFaker::Book.title
   num_page = "#{n+100}"
   avg_rate = "0.6"

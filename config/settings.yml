@@ -13,10 +13,14 @@ size_image_info: "90x100"
 length_name: 50
 length_email: 255
 pw_min: 6
-length_address: 500
+length_address: 140
 gravatar_size: 50
-per_page: 5
+per_page: 9
 length_description: 500
 truncate_description: 100
 truncate_content: 200
+length_content_review: 300
 length_rate: 10
+length_title_book: 50
+new_update_books: 3
+select_5: 5
