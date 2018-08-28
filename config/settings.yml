@@ -1,0 +1,26 @@
+number_page: 5
+link_email:  http://gravatar.com/emails
+password_reset_expired: 2
+user_post_paginate: 10
+post: 140
+five_mb: 5
+img: 400
+size_follow: 30
+email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+gravatar_url: "https://secure.gravatar.com/avatar/%{gravatar_id}?s=%{gravatar_size}"
+background_header: http://lovedia.vn/wp-content/uploads/2016/05/moon-7.jpg
+size_image_info: "90x100"
+length_name: 50
+length_email: 255
+pw_min: 6
+length_address: 140
+gravatar_size: 50
+per_page: 9
+length_description: 500
+truncate_description: 100
+truncate_content: 200
+length_content_review: 300
+length_rate: 10
+length_title_book: 50
+new_update_books: 3
+select_5: 5

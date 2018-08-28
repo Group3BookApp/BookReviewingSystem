@@ -1,0 +1,16 @@
+<div class="col-xs-12 col-md-3">
+  <aside>
+    <p><%= render "books/search_book" %></p>
+    <div class="categories">
+
+      <h2>Categories</h2>
+      <ul class="box-content Category-sidebar" id="list-category">
+      <%= @feed_items.each do |f| %>
+        <li><%= link_to f.category.name,"" %></li>
+      <% end %>
+      </ul>
+      <a href="#" class="btn btn-primary btn-xs" id="btn-loadmore-category">See All</a>
+    </div>
+  </aside>
+</div>
+

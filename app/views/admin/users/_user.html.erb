@@ -1,0 +1,20 @@
+<% @user.each do |user| %>
+  <table class="table table-condensed">
+    <tbody>
+      <tr>
+        <td rowspan="3" class="col-md-4">
+          <%= gravatar_for user, size: Settings.gravatar_size %>
+        </td>
+        <td class="col-md-6"><%= link_to user.name, user %></td>
+        <td rowspan="3">
+          <% if !user.admin? && !current_user?(user) %>
+          <%= link_to t(".delete"), admin_user_path(user), method: :delete,
+            class: "btn btn-danger", data: {confirm: t(".you_sure")} %>
+          <% end %>
+        </td>
+      </tr>
+      <tr><td><%= link_to user.email, user %></td></tr>
+      <tr><td><%= link_to user.address, user %></td></tr>
+    </tbody>
+  </table>
+<% end %>

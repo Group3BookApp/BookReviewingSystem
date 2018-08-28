@@ -1,0 +1,51 @@
+<% provide :title, @user.name %>
+<div class="row profile">
+  <div class="col-md-3">
+    <div class="profile-sidebar">
+      <div class="profile-userpic">
+        <center><%= gravatar_for @user %></center>
+      </div>
+      <div class="profile-usertitle">
+        <div class="profile-usertitle-name">
+          <%= @user.name %>
+        </div>
+        <div class="profile-usertitle-job">
+          <%= t ".developer" %>
+        </div>
+        <div class="profile-usertitle-email">
+          <%= @user.email %>
+        </div>
+        <div class="profile-usertitle-address">
+          <%= @user.address %>
+        </div>
+      </div>
+      <div class="profile-userbuttons">
+        <p><%= render "shared/stats" %></p>
+        <%= render "follow_form" if logged_in? %>
+      </div>
+      <div class="profile-usermenu">
+        <ul class="nav">
+          <li class="active">
+            <a href="#">
+            <i class="glyphicon glyphicon-home"></i>
+            Overview </a>
+          </li>
+          <li>
+            <%= link_to edit_user_path(current_user) do %>
+              <i class="glyphicon glyphicon-user" ></i>
+              <%= t ".account_settings" %>
+            <% end %>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+            <i class="glyphicon glyphicon-ok"></i>
+            <%= t ".request" %> </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <div class="profile-content"></div>
+  </div>
+</div>

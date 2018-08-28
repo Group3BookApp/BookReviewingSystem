@@ -1,0 +1,40 @@
+<footer class="black-bg text-white" >
+  <div class="space-20"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-3 col-md-3">
+        <h4 class="text-white"><%= t ".social" %></h4>
+      </div>
+      <div class="col-xs-12 col-sm-3 col-md-3">
+        <h4 class="text-white"><%= link_to t(".about"), about_path %></h4>
+        <ul class="list-unstyled">
+          <li>
+            <a target="_blank" href="#"><%= t ".guide" %></a>
+          </li>
+          <li>
+            <a target="_blank" href="#"><%= t ".feedback" %></a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <h4 class="text-white"><%= link_to t(".contact"), contact_path %></h4>
+        <table class="table border-none addr-dt">
+          <tbody>
+            <tr>
+              <td><i class="fa fa-map-marker-alt"></i></td>
+              <td><%= t ".address" %></td>
+            </tr>
+            <tr>
+              <td><i class="fa fa-envelope"></i></td>
+              <td><%= t ".email" %></td>
+            </tr>
+            <tr>
+              <td><i class="fa fa-phone"></i></td>
+              <td><%= t ".phone" %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>

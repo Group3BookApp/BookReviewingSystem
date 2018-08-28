@@ -1,0 +1,21 @@
+<% @books.each do |book| %>
+  <table id="table-book" class="table table-condensed">
+    <tbody >
+      <tr>
+        <td rowspan="2" class="col-md-1"><%= image_tag book.picture.url if book.picture? %></td>
+        <td rowspan="2" class="col-md-2"><%= book.title %></td>
+        <td class="col-md-1"><%= book.num_page %></td>
+        <td rowspan="2"><%= truncate(book.description, length: Settings.truncate_description) %></td>
+        <td class="col-md-2"><%= book.author.name %></td>
+        <td rowspan="2" class="col-md-1"><%= link_to t(".delete"), admin_book_path(book),method: :delete,
+          class: "btn btn-danger", data: {confirm: t(".you_sure")} %></td>
+        <td rowspan="2" class="col-md-1"><%= link_to t(".edit"), edit_admin_book_path(book),
+          class: "btn btn-primary" %></td>
+      </tr>
+      <tr>
+        <td><%= book.avg_rate %></td>
+        <td><%= book.category.name %></td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>

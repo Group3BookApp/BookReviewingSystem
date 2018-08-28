@@ -1,0 +1,8 @@
+<%= form_for :category do |f| %>
+  <div class="field">
+    <%= f.label :name, t(".new_category") %>
+    <%= f.text_field :name, class: "form-control",value: "",
+      placeholder: t(".enter_name") %>
+  </div>
+  <%= f.submit t(".add"), class: "btn btn-primary" %>
+<% end %>

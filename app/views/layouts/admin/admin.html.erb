@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title yield(:title) %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "custom", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "custom", "data-turbolinks-track": "reload" %>
+    <%= stylesheet_link_tag "admin", media: "all", "data-turbolinks-track": "reload" %>
+  </head>
+  <body id="color_body">
+    <div id="sidebar-admin-left" class="row">
+      <div id="sidebar" class="column">
+        <h3><%= link_to t(".back_home"), root_path, class: "fa fa-bar-chart" %></h2>
+        <h3><%= t ".navigation" %></h5>
+        <ul>
+          <li>
+            <%= link_to t(".manage_users"), admin_users_path, class: "fa fa-bar-chart" %>
+          </li>
+          <li>
+            <%= link_to t(".manage_authors"), admin_authors_path, class: "fa fa-bar-chart" %>
+          </li>
+          <li>
+            <%= link_to t(".manage_categories"), admin_categories_path,
+              class: "fa fa-bar-chart" %>
+          </li>
+          <li>
+            <%= link_to t(".manage_books"), admin_books_path, class: "fa fa-bar-chart" %>
+          </li>
+          <li>
+            <%= link_to t(".manage_feedbacks"), admin_feedbacks_path, class: "fa fa-bar-chart" %>
+          </li>
+          <li>
+            <%= link_to t(".manage_reviews"), admin_reviews_path, class: "fa fa-bar-chart" %>
+          </li>
+          <li>
+            <%= link_to t(".manage_comments"), admin_comments_path, class: "fa fa-bar-chart" %>
+          </li>
+        </ul>
+      </div>
+      <section id="main-content" class="column column-offset-20">
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+        <%= yield %>
+      </section>
+    </div>
+  </body>
+</html>

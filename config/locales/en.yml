@@ -1,33 +1,433 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  layouts:
+    header:
+      books: "Books"
+      home: "Home"
+      help: "Help"
+      login: "Log in"
+      signup: "Sign up"
+      logout: "Log out"
+      profile: "Profile"
+      setting: "Settings"
+      users: "Users"
+      account: "Account"
+      category: "Category"
+      manager: "Manager"
+    application:
+      base_title: "Book Review"
+    footer:
+      about: "About"
+      guide: "User Guide"
+      feedback: "Feedback"
+      contact: "Contact Us"
+      phone: "84-4-3795-5417"
+      email: "education@framgia.com"
+      address: "13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road,
+        Nam Tu Liem, Ha Noi, Viet Nam."
+      social: "Social"
+    slogan:
+      slogan: "Welcome to our book library"
+    admin:
+      admin:
+        base_title: "Book Reviews"
+        navigation: "Navigation"
+        back_home: "Back home"
+        manage_users: "Manage Users"
+        manage_authors: "Manage Authors"
+        manage_categories: "Manage Categories"
+        manage_books: "Manage Books"
+        manage_feedbacks: "Manage Feedbacks"
+        manage_reviews: "Manage Reviews"
+        manage_comments: "Manage Comments"
+  shared:
+    error_messages:
+      form_contain: "The form contains "
+      error: "error"
+    show_new_update_book:
+      new_update_book: "New Update Books"
+      more: "More"
+  users:
+    new:
+      signup: "Sign up"
+      create_account: "Create my account"
+      confirmation: "Confirmation"
+      title: "Sign up"
+    form:
+      confirm: "Confirmation"
+    create:
+      welcome: "Welcome to the Sample App!"
+      check_email_link: "Please check your email to activate your account."
+    show:
+      not_found: "The user didn't found"
+      developer: "Developer"
+      follow: "Follow"
+      account_settings: "Account Settings"
+      request: "Request"
+    edit:
+      edit_user: "Edit user"
+      save_changes: "Save changes"
+      change: "change"
+      update: "Update your profile"
+      login_request: "Please log in"
+      account_activated: "Account activated!"
+      invalid_activation_link: "Invalid activation link"
+    update:
+      profile: "Profile updated"
+    index:
+      title: "All users"
+      delete: "delete"
+      login_request: "Please log in"
+    destroy:
+      user_deleted: "User deleted"
+      delete_fail: "Delele fail"
+      login_request: "Please login"
+    user:
+      you_sure: "You sure?"
+  sessions:
+    new:
+      login: "Log In"
+      signup: "Sign Up"
+      newuser: "New User?"
+      signup_now: "Sign up now"
+      remember_me: "Remember me on this computer"
+      forgot_password: "(Forgot password)"
+    create:
+      invalid_combination: "Invalid email/password combination"
+      account_not_activated_check_email_link: "Account not activated.
+        Check your email for the activation link."
+      invalid_combination: "Invalid email/password combination"
+  user_mailer:
+    account_activation:
+      sampleapp: "Sample App"
+      welcome_click_link: "Welcome to the Sample App!
+        Click on the link below to activate your account:"
+      activate: "Activate"
+      hi: "Hi"
+      account_acctivation: "Account acctivation"
+    password_reset:
+      password_reset: "Password_reset"
+      hi: "Hi"
+      link_expire: "This link will expire in two hours."
+      click_link: "To reset your password click the link below:"
+  mailers:
+    user_mailer:
+      account_activation: "Account activation"
+    edit:
+      not_found: "Not found"
+      account_activated: "Account activated!"
+      invalid_activation_link: "Invalid activation link"
+  password_resets:
+    new:
+      forgot_password: "Forgot password"
+      submit: "Submit"
+    edit:
+      reset_password: "Reset password"
+      update_password: "Update password"
+      confirmation: "Confirmation"
+    create:
+      email_password_reset: "Email sent with password reset instructions"
+      email_not_found: "Email address not found"
+      account_not_activated: "Account not activated"
+    update:
+      password_reset: "Password has been reset."
+      can't_empty: "can't be empty"
+      password_reset_expired: "Password reset has expired."
+      account_not_activated: "Account not activated"
+  admin:
+    admin:
+      index:
+        welcome: "Welcome to Manager page!"
+        not_admin: "The page you were looking for doesn't exist (404)"
+    authors:
+      index:
+        manageauthor: "Manage Authors"
+        new_author: "New author:"
+        enter_name: "Enter new author..."
+        add: "ADD"
+        not_admin: "The page you were looking for doesn't exist (404)"
+      author:
+        delete: "Delete"
+        edit: "Edit"
+        you_sure: "You definitely want to delete!!!"
+      new_author:
+        new_author: "New author:"
+        enter_name: "Enter new author......"
+        add: "ADD"
+      edit:
+        edit: "Edit Author"
+        edit_name: "Edit name author:"
+        save: "Save changes"
+      destroy:
+        deleted: "Author deleted"
+        delete_fail: "Delele False"
+      update:
+        updated: "Author updated"
+      create:
+        created: "Author created"
+      load_author:
+        no_author: "No author"
+    categories:
+      index:
+        manage_category: "Manage Categories"
+        not_admin: "The page you were looking for doesn't exist (404)"
+      category:
+        delete: "Delete"
+        edit: "Edit"
+        you_sure: "You definitely want to delete!!!"
+      new_category:
+        new_category: "New category:"
+        enter_name: "Enter new category..."
+        add: "ADD"
+      edit:
+        edit: "Edit Category"
+        edit_name: "Edit name category:"
+        save: "Save changes"
+      update:
+        updated: "Category updated"
+      destroy:
+        deleted: "Category deleted"
+      create:
+        created: "Category created"
+      load_category:
+        no_category: "No category"
+    users:
+      index:
+        manage_users: "Manage Users"
+        not_admin: "The page you were looking for doesn't exist (404)"
+      user:
+        delete: "Delete"
+        you_sure: "You definitely want to delete!!!"
+      destroy:
+        deleted: "User deleted"
+      load_user:
+        no_user: "No user"
+    books:
+      index:
+        manage_book: "Manage books"
+        add_book: "Add new book"
+        new_book: "New book"
+        no_book: "No book"
+      book:
+        Image: "Image"
+        Title: "Title"
+        Pages: "Pages"
+        Rate: "Rate"
+        Description: "Description"
+        Author: "Author"
+        Category: "Category"
+        delete: "delete"
+        edit: "edit"
+        you_sure: "You definitely want to delete!!!"
+        rating: "Rating"
+        read: "Read"
+        waiting: "Waiting"
+        viewed: "Viewed"
+        description: "Description"
+        number_of_page: "Number of page: "
+        category_name: "Category Name: "
+      list_book:
+        delete: "delete"
+        edit: "edit"
+        you_sure: "You definitely want to delete!!!"
+      new_book:
+        new_book: "Title:"
+        enter_name: "Enter here..."
+        num_page: "Num pages:"
+        description: "Description:"
+        author: "Author:"
+        category: "Category:"
+        picture: "Picture:"
+        add: "ADD"
+      destroy:
+        no_book: "Not found book"
+        book_deleted: "Book deleted"
+        book_no_deleted: "Book no delete"
+      create:
+        book_created: "Book created"
+        book_no_created: "Book no create"
+      edit:
+        edit: "Edit Book"
+        new_book: "Title:"
+        enter_name: "Enter here..."
+        num_page: "Num pages:"
+        description: "Description:"
+        author: "Author:"
+        category: "Category:"
+        picture: "Picture:"
+        save: "Save changes"
+      update:
+        book_updated: "Book updated"
+      list_book:
+        delete: "Delete"
+        edit: "Edit"
+        you_sure: "You definitely want to delete!!!"
+        add: "ADD"
+      update:
+        book_updated: "Book updated"
+    feedbacks:
+      index:
+        managefeedback: "Manage Feedbacks"
+      feedback:
+        name_user: "Name user"
+        content: "Content"
+      list_feedback:
+        delete: "Delete"
+        view: "View"
+        you_sure: "You definitely want to delete!!!"
+      destroy:
+        feedback_deleted: "Feedbacks deleted"
+      show:
+        view_feedback: "View Feedback"
+        name_user: "Name user: "
+        content: "Content: "
+        back: "Back to Manager page"
+        delete: "Delete"
+        you_sure: "You definitely want to delete!!!"
+    reviews:
+      index:
+        manage_review: "Manage Reviews"
+      review:
+        name_user: "Name user"
+        content: "Content review"
+        num_rate: "Number rate"
+        name_book: "Name book"
+        delete: "Delete"
+        view: "View"
+      list_review:
+        delete: "Delete"
+        view: "View"
+        you_sure: "You definitely want to delete!!!"
+      destroy:
+        review_deleted: "Review deleted"
+      show:
+        view_review: "View Reviews"
+        name_user: "Name user:"
+        num_rate: "Number rate:"
+        name_book: "Name book:"
+        content: "Content review:"
+        delete: "Delete"
+        back: "Back to Manager page"
+    comments:
+      index:
+        manage_comment: "Manage Comments"
+      comment:
+        name_user: "Name user"
+        comment_content: "Comment content"
+        to_review: "to Review"
+        delete: "Delete"
+        view: "View"
+      list_comment:
+        delete: "Delete"
+        view: "View"
+        you_sure: "You definitely want to delete!!!"
+      destroy:
+        comment_deleted: "Comment deleted"
+      show:
+        view_comment: "View Comment"
+        name_user: "Name user: "
+        content: "Comment content: "
+        review_content: "to Review:"
+        back: "Back to Manager page"
+        delete: "Delete"
+        you_sure: "You definitely want to delete!!!"
+
+  books:
+    index:
+      all_books: "All Books"
+    book:
+      rating: "Rating"
+      read: "Read"
+      waiting: "Waiting"
+      viewed: "Viewed"
+      description: "Description"
+      number_of_page: "Number of page: "
+      category_name: "Category Name: "
+    show:
+      title: "Books"
+      author: "Author: "
+      category: "Category: "
+      status: "Status"
+      description: "Description"
+      reviews: "Reviews"
+      not_found: "Not found"
+
+  reviews:
+    form:
+      please_enter_review: "Please enter your review here..."
+      review: "Review"
+      your_review: "Your Review"
+    review:
+      edit: "Edit"
+      destroy: "Destroy"
+      you_sure: "You sure?"
+      update: "Update your review"
+      your_review: "Your review"
+      please_enter_review: "Please enter your review here..."
+      reply: "Reply"
+      like: "Like"
+      save_changes: "Save changes"
+      not_found: "Not found"
+    create:
+      success: "Success"
+      error: "Error"
+      not_found: "Not found"
+      login_request: "Please login"
+    destroy:
+      deleted: "Deleted your review"
+      delete_failed: "Delete failed"
+      not_found: "Not found"
+      unauthorized: "Unauthorized"
+    update:
+      update_failed: "Update failed"
+      updated: "Updated"
+      unauthorized: "Unauthorized"
+    show:
+      not_found: "Not found"
+      delete_fail: "Delete fail"
+      not_found: "Not found"
+      unauthorized: "Unauthorized"
+
+  mailers:
+    user_mailer:
+      account_activation: "Account activation"
+
+  helpers:
+      base_title: "Book Review"
+
+  static_pages:
+    home:
+      home: "Home"
+      title: "Books"
+    help:
+      help: "Help"
+      title: "Help User"
+    about:
+      about: "About"
+    contact:
+      contact: "Contact"
+  shared:
+    error_messages:
+      form_contain: "The form contains "
+      error: "error"
+    show_new_update_book:
+      new_update_book: "New Update Books"
+      more: "More"
+
+  marks:
+    form:
+      title_status: "Status:"
+      returned: "Returned"
+      reading: "Reading"
+      waiting: "Waiting"
+      mark: "Mark"
+    create:
+      success: "Mark Status Success"
+      error: "Mark Error"
+      not_found: "Not Found"
+    update:
+      updated: "Update Status Success"
+      update_failed: "Update Status Failed"
+    load_mark:
+      not_found: "Not Found"
+    load_in_user:
+      login_request: "Login Success" 

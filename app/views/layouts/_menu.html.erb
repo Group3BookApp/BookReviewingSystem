@@ -1,0 +1,40 @@
+<div class="mainmenu-area navbar-fixed-top navbar-header-custom affix"
+  data-spy="affix" data-offset-top="10" id="menu0">
+  <nav class="navbar reponsive-menu">
+    <div class="container">
+      <div class = "navbar-header">
+        <div class = "navbar-left in fade" id="menu1">
+          <%= link_to t(".title"), root_path, id: "logo" %>
+        </div>
+      </div>
+      <div id = "mainmenu" class = "navbar-right in fade">
+        <ul class="nav navbar-nav" id="menu2">
+          <li><%= link_to t(".home"), root_path %></li>
+          <li><%= link_to t(".help"), help_path %></li>
+          <% if logged_in? %>
+            <% if current_user.admin? %>
+              <li><%= link_to t(".manager"), admin_admin_index_path %></li>
+            <% end %>
+            <li><%= link_to t(".users"), users_path %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= t ".account" %> <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to t(".profile"), current_user %></li>
+              <li><%= link_to t(".settings"), edit_user_path(current_user) %>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to t(".logout"), logout_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+          <% else %>
+            <li><%= link_to t(".login"), login_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

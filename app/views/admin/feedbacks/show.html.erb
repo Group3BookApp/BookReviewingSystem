@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <h1><%= t ".view_feedback" %></h1>
+    <h4><%= t ".name_user" %></h4>
+    <h2><%= @feedbacks.name %></h2>
+    <h4><%= t ".content" %></h4>
+    <p><%= @feedbacks.content %></p>
+    <%= link_to t(".delete"), admin_feedback_path(@feedbacks), method: :delete,
+            class: "btn btn-danger", data: {confirm: t(".you_sure")} %>
+    <%= link_to t(".back"), admin_feedbacks_path, class: "btn btn-info"  %>
+  </div>
+</div>
