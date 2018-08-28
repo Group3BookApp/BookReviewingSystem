@@ -10,8 +10,9 @@ class User < ApplicationRecord
   validates :email, presence: true, length: {maximum: Settings.length_email}, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :address, length: {maximum: Settings.length_address}
   validates :password, presence: true, length: {minimum: Settings.pw_min}, allow_nil: true
+  mount_uploader :avatar, PictureUploader
   has_secure_password
-  scope :selected, -> {select :id, :name, :email}
+  scope :selected, -> {select :id, :name, :email, :avatar}
   scope :ordered, -> {order created_at: :DESC}
   scope :admin_search_user, -> (search){
     where("name LIKE ?", "%#{search}%")

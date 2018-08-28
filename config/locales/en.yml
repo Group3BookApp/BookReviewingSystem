@@ -54,6 +54,7 @@ en:
       title: "Sign up"
     form:
       confirm: "Confirmation"
+      avatar: "Avatar:"
     create:
       welcome: "Welcome to the Sample App!"
       check_email_link: "Please check your email to activate your account."
