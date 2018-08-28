@@ -2,8 +2,8 @@
   <table class="table table-condensed">
     <tbody>
       <tr>
-        <td rowspan="3" class="col-md-4">
-          <%= gravatar_for user, size: Settings.gravatar_size %>
+        <td rowspan="3" class="col-md-2">
+          <%= image_tag user.avatar.url %>
         </td>
         <td class="col-md-6"><%= link_to user.name, user %></td>
         <td rowspan="3">

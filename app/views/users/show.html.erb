@@ -3,7 +3,7 @@
   <div class="col-md-3">
     <div class="profile-sidebar">
       <div class="profile-userpic">
-        <center><%= gravatar_for @user %></center>
+        <center><%= image_tag @user.avatar.url %></center>
       </div>
       <div class="profile-usertitle">
         <div class="profile-usertitle-name">
