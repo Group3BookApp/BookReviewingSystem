@@ -9,9 +9,28 @@
             class: "btn btn-danger", data: {confirm: t(".you_sure")} %>
         </td>
         <td class="col-md-1">
-          <%= link_to t(".view"), admin_feedback_path(feedback), class: "btn btn-info" %>
+          <%= link_to t(".view"), "#{}",data: {toggle: "modal",
+            target: "#feedback-#{feedback.id}"}, class: "btn btn-info" %>
         </td>
       </tr>
     </tbody>
   </table>
+  <div id="feedback-<%=feedback.id%>" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"><%= t ".view_feedback" %></h4>
+        </div>
+        <div class="modal-body">
+          <h4><%= t ".name_user" %></h4>
+          <h2><%= feedback.name %></h2>
+          <h4><%= t ".content" %></h4>
+          <p><%= feedback.content %></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal"><%= t ".close" %></button>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>

@@ -1,9 +1,44 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
     <h1><%= t ".manageauthor" %></h1>
+    <p>
+      <%= link_to t(".refresh"), admin_authors_path, class: "btn btn-primary" %>
+      <%= link_to t(".search_name"), "#", data: {toggle: "modal", target: "#search_name_id"}, class: "btn btn-primary" %>
+      <%= link_to t(".new_author"), "#", data: {toggle: "modal", target: "#new_author_id"}, class: "btn btn-primary" %>
+    </p>
+    <%= render "not_found" %>
     <%= paginate @author, theme: "twitter-bootstrap-3" %>
     <%= render "author" %>
     <%= paginate @author, theme: "twitter-bootstrap-3" %>
-    <p><%= render "new_author" %></p>
+  </div>
+</div>
+<div id="new_author_id" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><%= t ".new_author" %></h4>
+      </div>
+      <div class="modal-body">
+        <%= render "new_author" %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= t ".close" %></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="search_name_id" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><%= t ".search_name" %></h4>
+      </div>
+      <div class="modal-body">
+        <%= render "search_name" %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= t ".close" %></button>
+      </div>
+    </div>
   </div>
 </div>

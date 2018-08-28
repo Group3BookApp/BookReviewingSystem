@@ -13,6 +13,9 @@ class User < ApplicationRecord
   has_secure_password
   scope :selected, -> {select :id, :name, :email}
   scope :ordered, -> {order created_at: :DESC}
+  scope :admin_search_user, -> (search){
+    where("name LIKE ?", "%#{search}%")
+  }
 
   class << self
     def digest string

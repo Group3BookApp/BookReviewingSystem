@@ -3,8 +3,13 @@ module Admin
     before_action :load_review, only: %i(show destroy)
 
     def index
-      @reviews = Review.by_select_review.page(params[:page]).by_order
-        .per Settings.per_page
+      if params[:search]
+        @reviews = Review.search_review(params[:search]).by_select_review
+          .page(params[:page]).by_order.per Settings.per_page
+      else
+        @reviews = Review.by_select_review.page(params[:page]).by_order
+          .per Settings.per_page
+      end
     end
 
     def show; end

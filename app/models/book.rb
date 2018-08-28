@@ -7,6 +7,9 @@ class Book < ApplicationRecord
     select :id, :picture, :title, :num_page, :avg_rate, :description,
     :author_id, :category_id
   }
+  scope :search_book, -> (search){
+    where("title LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%")
+  }
   mount_uploader :picture, PictureUploader
   validates :title, presence: true, length: {maximum: Settings.length_title_book}
   validates :num_page, presence: true

@@ -7,6 +7,9 @@ class Review < ApplicationRecord
   scope :by_select_review, -> {
     select :id, :content, :num_rate, :user_id, :book_id, :created_at
   }
+  scope :search_review, -> (search){
+    where("content LIKE ? OR num_rate LIKE ?", "%#{search}%", "%#{search}%")
+  }
   scope :by_order, -> {order created_at: :desc}
   scope :select_5, -> {take Settings.select_5}
   validates :user_id, presence: true

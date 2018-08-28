@@ -1,9 +1,44 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
     <h1><%= t ".manage_category" %></h1>
+    <p>
+      <%= link_to t(".refresh"), admin_categories_path, class: "btn btn-primary" %>
+      <%= link_to t(".search_name"), "#", data: {toggle: "modal", target: "#search_name_id"}, class: "btn btn-primary" %>
+      <%= link_to t(".new_category"), "#", data: {toggle: "modal", target: "#new_category_id"}, class: "btn btn-primary" %>
+    </p>
+    <%= render "not_found" %>
     <%= paginate @category, theme: "twitter-bootstrap-3" %>
     <%= render "category" %>
     <%= paginate @category, theme: "twitter-bootstrap-3" %>
-    <%= render "new_category" %>
+  </div>
+</div>
+<div id="new_category_id" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><%= t ".new_category" %></h4>
+      </div>
+      <div class="modal-body">
+        <%= render "new_category" %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= t ".close" %></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="search_name_id" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><%= t ".search_name" %></h4>
+      </div>
+      <div class="modal-body">
+        <%= render "search_name" %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= t ".close" %></button>
+      </div>
+    </div>
   </div>
 </div>

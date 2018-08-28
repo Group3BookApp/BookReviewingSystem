@@ -6,6 +6,9 @@ class Comment < ApplicationRecord
   scope :by_select_comment, -> {
     select :id, :content, :user_id, :review_id
   }
+  scope :search_comment, -> (search){
+    where("content LIKE ?","%#{search}%")
+  }
   validates :content, presence: true, length: {maximum: Settings.length_description}
   validates :user_id, presence: true, length: {maximum: Settings.post}
   validates :review_id, presence: true, length: {maximum: Settings.post}
