@@ -3,24 +3,9 @@
     <h1><%= t ".manage_review" %></h1>
     <p>
       <%= link_to t(".refresh"), admin_reviews_path, class: "btn btn-primary" %>
-      <%= link_to t(".search_content"), "#", data: {toggle: "modal", target: "#search_id"}, class: "btn btn-primary" %>
+      <%= render "search" %>
     </p>
     <%= render "review" %>
     <%= paginate @reviews, theme: "twitter-bootstrap-3" %>
-  </div>
-</div>
-<div id="search_id" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title"><%= t ".search_content" %></h4>
-      </div>
-      <div class="modal-body">
-        <%= render "search" %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal"><%= t ".close" %></button>
-      </div>
-    </div>
   </div>
 </div>
