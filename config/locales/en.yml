@@ -150,6 +150,8 @@ en:
         search_name: "Search name Author"
         new_author: "New Author"
         close: "Close"
+      list_author:
+        save: "Save changes"
       search_name:
         enter_search: "Enter name author search..."
         search: "Search!"
@@ -185,6 +187,8 @@ en:
         search_name: "Search name Category"
         new_category: "New Category"
         close: "Close"
+      list_category:
+        save: "Save changes"
       search_name:
         enter_search: "Enter name category search..."
         search: "Search!"

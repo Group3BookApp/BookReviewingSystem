@@ -1,0 +1,39 @@
+<% @category.each do |category| %>
+  <table id="table-book" class="table table-condensed">
+    <tbody>
+      <tr>
+        <td class="col-md-4"><%= category.name %></td>
+        <td class="col-md-2"><%= category.books.count %></td>
+        <td class="col-md-1">
+          <%= link_to t(".delete"), admin_category_path(category), method: :delete,
+            class: "btn btn-danger", data: {confirm: t(".you_sure")} %>
+        </td>
+        <td class="col-md-1">
+          <%= link_to t(".edit"), "#", data: {toggle: "modal",
+            target: "#edit_name_#{category.id}"}, class: "btn btn-primary" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="edit_name_<%=category.id%>" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"><%= t ".edit_category" %></h4>
+        </div>
+        <div class="modal-body">
+          <%= form_for [:admin, category] do |f| %>
+            <%= f.label :name, t(".edit_name") %>
+            <%= f.text_field :name, class: "form-control" %>
+            <%= f.submit t(".save"), class: "btn btn-primary" %>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            <%= t ".close" %>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

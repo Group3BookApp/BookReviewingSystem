@@ -6,7 +6,6 @@
       <%= link_to t(".new_author"), "#", data: {toggle: "modal", target: "#new_author_id"}, class: "btn btn-primary" %>
       <%= render "search_name" %>
     </p>
-    <%= render "not_found" %>
     <%= paginate @author, theme: "twitter-bootstrap-3" %>
     <%= render "author" %>
     <%= paginate @author, theme: "twitter-bootstrap-3" %>

@@ -1,20 +1,32 @@
+<table id="table-book-th" class="table table-condensed" >
+  <tbody>
+    <tr>
+      <td class="col-md-2"><%= t ".avatar" %></td>
+      <td class="col-md-2"><%= t ".name" %></td>
+      <td class="col-md-3"><%= t ".email" %></td>
+      <td class="col-md-3"><%= t ".address" %></td>
+      <td class="col-md-2"><%= t ".delete" %></td>
+    </tr>
+  </tbody>
+</table>
 <% @user.each do |user| %>
-  <table class="table table-condensed">
+  <table table id="table-book" class="table table-condensed">
     <tbody>
       <tr>
-        <td rowspan="3" class="col-md-2">
+        <td class="col-md-2">
           <%= image_tag user.avatar.url %>
         </td>
-        <td class="col-md-6"><%= link_to user.name, user %></td>
-        <td rowspan="3">
+        <td class="col-md-2"><%= link_to user.name, user %></td>
+
+        <td class="col-md-3"><%= link_to user.email, user %></td>
+        <td class="col-md-3"><%= link_to user.address, user %></td>
+        <td class="col-md-2">
           <% if !user.admin? && !current_user?(user) %>
           <%= link_to t(".delete"), admin_user_path(user), method: :delete,
             class: "btn btn-danger", data: {confirm: t(".you_sure")} %>
           <% end %>
         </td>
       </tr>
-      <tr><td><%= link_to user.email, user %></td></tr>
-      <tr><td><%= link_to user.address, user %></td></tr>
     </tbody>
   </table>
 <% end %>
