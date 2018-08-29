@@ -151,7 +151,7 @@ en:
         new_author: "New Author"
         close: "Close"
       search_name:
-        enter_search: "Enter search..."
+        enter_search: "Enter name author search..."
         search: "Search!"
       author:
         delete: "Delete"
@@ -186,7 +186,7 @@ en:
         new_category: "New Category"
         close: "Close"
       search_name:
-        enter_search: "Enter search..."
+        enter_search: "Enter name category search..."
         search: "Search!"
       category:
         delete: "Delete"
@@ -215,7 +215,7 @@ en:
         search_name: "Search name User"
         close: "close"
       search_name:
-        enter_search: "Enter search..."
+        enter_search: "Enter name user search..."
         search: "Search!"
       user:
         delete: "Delete"
@@ -236,7 +236,7 @@ en:
         new_book: "New book"
         close: "close"
       search:
-        enter_search: "Enter search..."
+        enter_search: "Enter title book search..."
         search: "Search!"
       book:
         Image: "Image"
@@ -297,7 +297,7 @@ en:
         search_content: "Search content Feedback"
         close: "close"
       search:
-        enter_search: "Enter search..."
+        enter_search: "Enter content feedback search..."
         search: "Search!"
       feedback:
         name_user: "Name user"
@@ -320,7 +320,7 @@ en:
         search_content: "Search content Review"
         close: "close"
       search:
-        enter_search: "Enter search..."
+        enter_search: "Enter content review search..."
         search: "Search!"
       review:
         name_user: "Name user"
@@ -347,7 +347,7 @@ en:
         search_content: "Search content Comment"
         close: "close"
       search:
-        enter_search: "Enter search..."
+        enter_search: "Enter content comment search..."
         search: "Search!"
       comment:
         name_user: "Name user"
