@@ -1,38 +1,12 @@
-<% @author.each do |author| %>
-  <table  class="table table-condensed">
-    <tbody>
-      <tr>
-        <td class="col-md-6"><%= author.name %></td>
-        <td class="col-md-1">
-          <%= link_to t(".delete"), admin_author_path(author), method: :delete,
-            class: "btn btn-danger", data: {confirm: t(".you_sure")} %>
-        </td>
-        <td>
-          <%= link_to t(".edit"), "#", data: {toggle: "modal",
-            target: "#author-#{author.id}"}, class: "btn btn-primary" %>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <div id="author-<%=author.id%>" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title"><%= t ".edit_author" %></h4>
-        </div>
-        <div class="modal-body">
-          <%= form_for [:admin, author] do |f| %>
-            <%= f.label :name, t(".edit_name")%>
-            <%= f.text_field :name, class: "form-control" %>
-            <%= f.submit t(".save"), class: "btn btn-primary" %>
-          <% end %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">
-            <%= t ".close" %>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
+<table id="table-book-th" class="table table-condensed">
+  <tbody>
+    <tr>
+      <td class="col-md-4"><%= t ".Name_author" %></td>
+      <td class="col-md-2"><%= t ".Number_book" %></td>
+      <td class="col-md-1"><%= t ".delete" %></td>
+      <td class="col-md-1"><%= t ".edit" %></td>
+    </tr>
+  </tbody>
+</table>
+<%= render "not_found" %>
+<%= render "list_author" %>
